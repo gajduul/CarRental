@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f566c9c-5b1f-44ad-991f-f4c31558aaa2" name="Changes" comment="client update" />
+    <list default="true" id="6f566c9c-5b1f-44ad-991f-f4c31558aaa2" name="Changes" comment="vehicle and rental classes creation">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,7 +45,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670688511669</updated>
-      <workItem from="1670688513803" duration="6353000" />
+      <workItem from="1670688513803" duration="6395000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1670688578863</created>
@@ -101,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670694906755</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="vehicle and rental classes creation">
+      <created>1670694962671</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1670694962671</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +151,7 @@
     <MESSAGE value="test" />
     <MESSAGE value="added classes" />
     <MESSAGE value="client update" />
-    <option name="LAST_COMMIT_MESSAGE" value="client update" />
+    <MESSAGE value="vehicle and rental classes creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="vehicle and rental classes creation" />
   </component>
 </project>

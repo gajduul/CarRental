@@ -7,10 +7,6 @@ public class Client {
     int idDrivingLicense;
 
 
-    public String showClient() {
-        return name + "\n" + surname + "\n" + address + "\n" + idNumber + "\n" + idDrivingLicense;
-     }
-
     //konstruktor
     public void listClient(String name, String surname, String address, int idNumber, int idDrivingLicense){
         this.name = name;
@@ -19,6 +15,10 @@ public class Client {
         this.idNumber = idNumber;
         this.idDrivingLicense = idDrivingLicense;
     }
+
+    public String showClient() {
+        return name + "\n" + surname + "\n" + address + "\n" + idNumber + "\n" + idDrivingLicense;
+     }
 
 
 }
