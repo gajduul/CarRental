@@ -1,26 +1,27 @@
-public class Client {
+public class Client extends Person {
 
-    String name;
-    String surname;
     String address;
     int idNumber;
     int idDrivingLicense;
-    String contactPhomeNumber;
+    String contactPhoneNumber;
     String contactEmailAddress;
 
     //konstruktor
-    public void addClient(String name, String surname, String address, int idNumber, int idDrivingLicense, String contactPhomeNumber, String contactEmailAddress){
-        this.name = name;
-        this.surname = surname;
+    public Client(String name, String surname, String dateOfBirth,String address, int idDrivingLicense, String contactPhoneNumber, String contactEmailAddress) {
+        super(name, surname, dateOfBirth);
         this.address = address;
-        this.idNumber = idNumber;
         this.idDrivingLicense = idDrivingLicense;
-        this.contactPhomeNumber = contactPhomeNumber;
+        this.contactPhoneNumber = contactPhoneNumber;
         this.contactEmailAddress = contactEmailAddress;
     }
 
-    public String showClient() {
-        return name + "\n" + surname + "\n" + address + "\n" + idNumber + "\n" + idDrivingLicense + "\n" + contactPhomeNumber + "\n" + contactEmailAddress;
+    @Override
+    public void getInfo() {
+        super.getInfo();
+        System.out.print("Adres: "+ address + "\n") ;
+        System.out.print("Prawo jazdy nr. serii: "+ idDrivingLicense + "\n") ;
+        System.out.print("Telefon kontaktowy: " + contactPhoneNumber + "\n") ;
+        System.out.print("e-mail: " + contactEmailAddress + "\n") ;
      }
 
     public void removeClient(){

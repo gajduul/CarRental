@@ -1,9 +1,9 @@
 public class Main {
     public static void main(String[] args)
     {
-        Client client1 = new Client();
-        client1.addClient("Andrzej", "Bach", "Gdansk", 1, 123456789, "+48 123 123 123", "example@gmail.com");
-        System.out.println(client1.showClient());
+
+        Client client1 = new Client("Andrzej", "Bach", "1999-12-12","Gdańsk, Papieska 2137" , 21372005 , "+48 123 123 123","example@gmail.com");
+        client1.getInfo();
 
 
 

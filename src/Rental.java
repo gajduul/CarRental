@@ -1,5 +1,5 @@
-public class Rental extends Client{
-
+public class Rental {
+    //KLASA CAR RENTAL ZOSTAJE DO BUILDU NA SAM KONIEC
     int startDate;
     int endDate;
     double toPay;
