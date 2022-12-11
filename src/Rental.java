@@ -1,4 +1,4 @@
-public class Rental extends Client{
+public class Rental{
 
     int startDate;
     int endDate;

@@ -1,4 +1,4 @@
-public class Client {
+public class Client extends Person{
 
     String name;
     String surname;
