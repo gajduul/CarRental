@@ -20,7 +20,8 @@ public class Client {
     }
 
     public String showClient() {
-        return name + "\n" + surname + "\n" + address + "\n" + idNumber + "\n" + idDrivingLicense "\n" + contactPhomeNumber "\n" + contactEmailAddress;
+        return name + "\n" + surname + "\n" + address + "\n" + idNumber + "\n"
+                + idDrivingLicense + "\n" + contactPhomeNumber + "\n" + contactEmailAddress;
      }
 
      //DO NAPISANIA

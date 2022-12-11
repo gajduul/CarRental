@@ -8,7 +8,7 @@ public class Vehicle {
     boolean availability;
 
     //konstruktor samochod
-    public void addVehicle(String registrationNumber, String vin,String mark, String model, int yearOfProduction, boolean availability){
+    public void addVehicle(String registrationNumber, String vin,String make, String model, int yearOfProduction, boolean availability){
         this.registrationNumber = registrationNumber;
         this.vin = vin;
         this.make = make;
