@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f566c9c-5b1f-44ad-991f-f4c31558aaa2" name="Changes" comment="Fixing some code">
-      <change afterPath="$PROJECT_DIR$/src/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6f566c9c-5b1f-44ad-991f-f4c31558aaa2" name="Changes" comment="Added classes&#10;-employee, person" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +67,7 @@
       <updated>1670688511669</updated>
       <workItem from="1670688513803" duration="6395000" />
       <workItem from="1670765674055" duration="1077000" />
-      <workItem from="1670766785473" duration="2840000" />
+      <workItem from="1670766785473" duration="3236000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1670688578863</created>
@@ -143,7 +139,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670766287093</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added classes&#10;-employee, person">
+      <created>1670769693862</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1670769693862</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added classes&#10;-employee, person">
+      <created>1670769979513</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1670769979513</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +208,7 @@
     <MESSAGE value="client update" />
     <MESSAGE value="vehicle and rental classes creation" />
     <MESSAGE value="Fixing some code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing some code" />
+    <MESSAGE value="Added classes&#10;-employee, person" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added classes&#10;-employee, person" />
   </component>
 </project>
