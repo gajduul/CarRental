@@ -20,15 +20,16 @@ public class Client {
     }
 
     public String showClient() {
-        return name + "\n" + surname + "\n" + address + "\n" + idNumber + "\n"
-                + idDrivingLicense + "\n" + contactPhomeNumber + "\n" + contactEmailAddress;
+        return name + "\n" + surname + "\n" + address + "\n" + idNumber + "\n" + idDrivingLicense + "\n" + contactPhomeNumber + "\n" + contactEmailAddress;
      }
+
+    public void removeClient(){
+        //Tutaj dziś pracuje wyjazd stąd XD
+    }
 
      //DO NAPISANIA
     /*
-    public void removeClient(){
 
-    }
 
     public void editClient(){
 
