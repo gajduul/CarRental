@@ -26,7 +26,7 @@ public class Vehicle {
     }
 
 
-    //DO OGARNIECIA
+    //DO NAPISANIA
     /*
     public void removeVehicle() {
 

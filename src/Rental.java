@@ -4,6 +4,7 @@ public class Rental extends Client{
     int endDate;
     double toPay;
 
+    //DO NAPISANIA
     public void rentVehicle(){
 
     }
@@ -12,11 +13,11 @@ public class Rental extends Client{
 
     }
 
-    public void addRentalTime(){
+    public void changeReturnTime(){
 
     }
 
-    public void findRental(){
+    public void serchRental(){
 
     }
 
