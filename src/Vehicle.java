@@ -8,7 +8,7 @@ public class Vehicle {
     boolean availability;
 
     //konstruktor samochod
-    public void addVehicle(String registrationNumber, String vin,String mark, String model, int yearOfProduction, boolean availability){
+    public void addCar(String registrationNumber, String vin,String make, String model, int yearOfProduction, boolean availability){
         this.registrationNumber = registrationNumber;
         this.vin = vin;
         this.make = make;
@@ -17,7 +17,7 @@ public class Vehicle {
         this.availability = availability;
     }
 
-    public String showVehicle(){
+    public String showCar(){
         return registrationNumber +" "+ vin  +" "+ make  +" "+ model  +" "+ yearOfProduction;
     }
 
@@ -27,17 +27,18 @@ public class Vehicle {
 
 
     //DO OGARNIECIA
-    /*
-    public void removeVehicle() {
+    /*public String showAvailable(){
 
     }
 
-    public void editVehicle(){
+    public String showAll(){
 
     }
 
-    public void searchVehicle{
+    public String showNotAvailable(){
 
-    }
-    */
+    }*/
+
+
+
 }
