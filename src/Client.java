@@ -24,13 +24,13 @@ public class Client extends Person {
         System.out.print("e-mail: " + contactEmailAddress + "\n") ;
      }
 
-    public void removeClient(){
-        //Tutaj dziś pracuje wyjazd stąd XD
-    }
+
 
      //DO NAPISANIA
     /*
+    public void removeClient(){
 
+    }
 
     public void editClient(){
 
