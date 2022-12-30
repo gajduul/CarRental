@@ -54,6 +54,7 @@ public class Main {
                     }
                 case 2:
                     // Kod do wykonania dla opcji 2 (zwrot samochodu)
+                    System.out.println("bla bla");
                     break;
                 case 3:
                     // Kod do wykonania dla opcji 2 (Lista dostępnych samochodów)
