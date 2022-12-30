@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] args) {
+   public static void main(String[] args) {
         int choose = 0;
 
         RentalCompany rentalCompany = new RentalCompany("JanuszRent", "Grunwaldzka 286, Gdańsk", "666 768 223");
@@ -17,8 +17,8 @@ public class Main {
             System.out.println("1. Wypożyczenie samochodu");
             System.out.println("2. Zwrot samochodu");
             System.out.println("3. Lista dostępnych samochodów");
-            System.out.println("4. Rezerwacja samochodu");
-            System.out.println("5. Anulowanie rezerwacji");
+            System.out.println("4. Dodanie samochodu");
+            System.out.println("5. Usunięcie samochodu");
             System.out.println("6. Wyjście");
             System.out.print("Wybierz opcję: ");
             choose = scanner.nextInt();
@@ -37,15 +37,15 @@ public class Main {
                         case 2:
                             System.out.println("Aby dodać klienta podaj informacje o nim:");
                             System.out.print("Imie: ");
-                            String name = scanner.nextLine();
+                            String name = scanner.next();
                             System.out.print("Nazwisko: ");
-                            String surname = scanner.nextLine();
+                            String surname = scanner.next();
                             System.out.print("Nr. tel: ");
-                            String phone = scanner.nextLine();
+                            String phone = scanner.next();
                             System.out.print("E-mail: ");
-                            String email = scanner.nextLine();
+                            String email = scanner.next();
                             System.out.print("Adres: ");
-                            String address = scanner.nextLine();
+                            String address = scanner.next();
 
                             Customer customer = new Customer(name, surname, phone, email, address);
                             rentalCompany.addCustomer(customer);
@@ -55,21 +55,23 @@ public class Main {
                     // Kod do wykonania dla opcji 2 (zwrot samochodu)
                     break;
                 case 3:
-                    // Kod do wykonania dla opcji 3 (lista dostępnych samochodów)
+
                     break;
                 case 4:
-                    // Kod do wykonania dla opcji 4 (rezerwacja samochodu)
+                    // Kod do wykonania dla opcji 4 (Dodanie samochodu)
                     break;
                 case 5:
-                    // Kod do wykonania dla opcji 5 (anulowanie rezerwacji)
+                    // Kod do wykonania dla opcji 5 (Usunięcie samochodu)
                     break;
                 case 6:
-                    // Kod do wykonania
                     break;
-
+                default:
+                    System.out.println("Niewłaściwa opcja!");
+                    break;
             }
         }
     }
+
 }
 
 
