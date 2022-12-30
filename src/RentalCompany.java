@@ -77,7 +77,7 @@ public class RentalCompany {
         }
         else{
             for (Customer customer : customers) {
-                System.out.println(customer);
+                System.out.println(customer.toString());
             }
         }
     }
@@ -89,5 +89,8 @@ public class RentalCompany {
             System.out.println("Użytkownik nie wypożyczył jeszcze żadnego auta w wypożyczalni");
         }
     }
+
+
+
 }
 

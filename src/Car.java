@@ -13,7 +13,6 @@ public class Car {
         this.available = true;
     }
 
-
     public void rentCar(){
         if(available){
             available = false;

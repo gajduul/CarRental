@@ -17,6 +17,10 @@ public class Customer {
         this.adress = adress;
     }
 
+    public String toString(){
+        return name +" "+ surname +" "+ phone +" "+ email +" "+ adress;
+    }
+
     public void rentCar(Car car){
         if(rentedCar == null){
             rentedCar = car;
