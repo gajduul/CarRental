@@ -25,7 +25,32 @@ public class Main {
 
             switch (choose) {
                 case 1:
-                        RentalCompany.rentCarMenu();
+                    System.out.println("Kto wypożycza samochód?");
+                    System.out.println("1. Stały klient");
+                    System.out.println("2. Nowy klient");
+                    int customerOption = scanner.nextInt();
+                    switch (customerOption) {
+                        case 1:
+                            System.out.println("Wybierz klienta do którego chcesz przypisać wypożyczenie:");
+                            rentalCompany.getCustomers();
+                            break;
+                        case 2:
+                            System.out.println("Aby dodać klienta podaj informacje o nim:");
+                            System.out.print("Imie: ");
+                            String name = scanner.nextLine();
+                            System.out.print("Nazwisko: ");
+                            String surname = scanner.nextLine();
+                            System.out.print("Nr. tel: ");
+                            String phone = scanner.nextLine();
+                            System.out.print("E-mail: ");
+                            String email = scanner.nextLine();
+                            System.out.print("Adres: ");
+                            String address = scanner.nextLine();
+
+                            Customer customer = new Customer(name, surname, phone, email, address);
+                            rentalCompany.addCustomer(customer);
+
+                    }
                 case 2:
                     // Kod do wykonania dla opcji 2 (zwrot samochodu)
                     break;
