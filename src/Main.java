@@ -1,52 +1,52 @@
+import javax.annotation.processing.SupportedSourceVersion;
 import java.io.Console;
+import java.util.Collections;
 import java.util.Scanner;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
+        int choose = 0;
+
+        RentalCompany rentalCompany = new RentalCompany("JanuszRent", "Grunwaldzka 286, Gdańsk", "666 768 223");
         Scanner scanner = new Scanner(System.in);
-        System.out.println("---WITAJ W WYPOŻYCZALNI SAMOCHODÓW---");
-        System.out.println("Do jakiego działu chcesz się przenieść?\n1. Klienci \n2. Samochody \n3. Wypożyczenia \n4. Pracownicy");
-        int choose = Integer.parseInt(scanner.nextLine());
-        System.out.println("Co robimy?");
-        switch (choose){
-            case 1:
-                System.out.println("1.Dodaj klienta");
-                System.out.println("2.Usuń klienta");
-                System.out.println("3.Edytuj klienta");
-                System.out.println("5.Informacje o kliencie");
-                break;
-            case 2:
-                System.out.println("1.Dodaj samochód");
-                System.out.println("2.Usuń samochód");
-                System.out.println("3.Edytuj samochód");
-                System.out.println("5.Informacje o samochodzie");
-                break;
-            case 3:
-                System.out.println("1.Wypożycz samochód");
-                System.out.println("2.Przedłuż wypożyczenie");
-                System.out.println("3.Informacje o wypożyczeniu");
-                break;
-            case 4:
-                System.out.println("1.Informacje o pracowniku");
-                break;
+        while (choose != 8) {
+
+            System.out.println("--- Menu ---");
+            System.out.println("1. Wypożyczenie samochodu");
+            System.out.println("2. Zwrot samochodu");
+            System.out.println("3. Lista dostępnych samochodów");
+            System.out.println("4. Rezerwacja samochodu");
+            System.out.println("5. Anulowanie rezerwacji");
+            System.out.println("6. Wyjście");
+            System.out.print("Wybierz opcję: ");
+            choose = scanner.nextInt();
+
+            switch (choose) {
+                case 1:
+                        RentalCompany.rentCarMenu();
+                case 2:
+                    // Kod do wykonania dla opcji 2 (zwrot samochodu)
+                    break;
+                case 3:
+                    // Kod do wykonania dla opcji 3 (lista dostępnych samochodów)
+                    break;
+                case 4:
+                    // Kod do wykonania dla opcji 4 (rezerwacja samochodu)
+                    break;
+                case 5:
+                    // Kod do wykonania dla opcji 5 (anulowanie rezerwacji)
+                    break;
+                case 6:
+                    // Kod do wykonania
+                    break;
+
+            }
         }
-
-
-
-
-
-
-        /* STREFA TESTÓW
-        Client client1 = new Client("Andrzej", "Bach", "1999-12-12","Gdańsk, Papieska 2137" , 21372005 , "+48 123 123 123","example@gmail.com");
-        client1.getInfo();
-
-        Employee employee1= new Employee("Tomasz", "Tłoczek","1979-12-11", "Service Manager ");
-        employee1.getInfo();
-
-        Vehicle vehicle1 = new Vehicle();
-        vehicle1.addVehicle("GD XXXXXX", "VF3YD3MFC12E68833", "Chevrolet", "Corvette", 1996, true);
-        System.out.println(vehicle1.showVehicle());
-        System.out.println(vehicle1.isAvailable());*/
     }
 }
+
+
+
+
