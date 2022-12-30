@@ -80,7 +80,6 @@ public class RentalCompany {
                 System.out.println(customer);
             }
         }
-
     }
 
     public void getRentalHistory(Customer customer) {

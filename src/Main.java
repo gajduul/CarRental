@@ -49,13 +49,14 @@ public class Main {
 
                             Customer customer = new Customer(name, surname, phone, email, address);
                             rentalCompany.addCustomer(customer);
+                            System.out.println("TEST");
 
                     }
                 case 2:
                     // Kod do wykonania dla opcji 2 (zwrot samochodu)
                     break;
                 case 3:
-
+                    // Kod do wykonania dla opcji 2 (Lista dostępnych samochodów)
                     break;
                 case 4:
                     // Kod do wykonania dla opcji 4 (Dodanie samochodu)
