@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class Main {
    public static void main(String[] args) {
         int choose = 0;
+        int id;
 
         RentalCompany rentalCompany = new RentalCompany("JanuszRent", "Grunwaldzka 286, Gdańsk", "666 768 223");
         Scanner scanner = new Scanner(System.in);
@@ -26,40 +27,27 @@ public class Main {
             switch (choose) {
                 case 1:
                     System.out.println("Kto wypożycza samochód?");
-                    System.out.println("1. Stały klient");
-                    System.out.println("2. Nowy klient");
-                    int customerOption = scanner.nextInt();
-                    switch (customerOption) {
-                        case 1:
-                            System.out.println("Wybierz klienta do którego chcesz przypisać wypożyczenie:");
-                            rentalCompany.getCustomers();
-                            break;
-                        case 2:
-                            System.out.println("Aby dodać klienta podaj informacje o nim:");
-                            System.out.print("Imie: ");
-                            String name = scanner.next();
-                            System.out.print("Nazwisko: ");
-                            String surname = scanner.next();
-                            System.out.print("Nr. tel: ");
-                            String phone = scanner.next();
-                            System.out.print("E-mail: ");
-                            String email = scanner.next();
-                            System.out.print("Adres: ");
-                            String address = scanner.next();
-
-                            Customer customer = new Customer(name, surname, phone, email, address);
-                            rentalCompany.addCustomer(customer);
-
-
-                    }
+                    rentalCompany.getCustomers();
+                    
                 case 2:
                     // Kod do wykonania dla opcji 2 (zwrot samochodu)
                     break;
                 case 3:
-                    // Kod do wykonania dla opcji 2 (Lista dostępnych samochodów)
+                    System.out.println("Lista samochodów:");
+                    rentalCompany.getCars();
                     break;
                 case 4:
-                    // Kod do wykonania dla opcji 4 (Dodanie samochodu)
+                    System.out.println("Tutaj dodasz samochód! Najpierw potrzebujemy o nim informacje");
+                    System.out.print("Marka: ");
+                    String mark = scanner.next();
+                    System.out.print("Model: ");
+                    String model = scanner.next();
+                    System.out.print("Rok produkcji ");
+                    int year = Integer.parseInt(scanner.next());
+
+                    Car car = new Car(mark,model,year);
+                    rentalCompany.addCar(car);
+
                     break;
                 case 5:
                     // Kod do wykonania dla opcji 5 (Usunięcie samochodu)

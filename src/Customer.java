@@ -1,15 +1,19 @@
 import java.util.List;
 import java.util.ArrayList;
 public class Customer {
+    private int id;
     private String name;
     private String surname;
     private String phone;
     private String email;
     private String adress;
+    private static int count;
     private Car rentedCar;
     private List<Car> rentalHistory;
 
     public Customer(String name,String surname,String phone,String email,String adress){
+        count++;
+        id = count;
         this.name = name;
         this.surname = surname;
         this.phone = phone;

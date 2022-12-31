@@ -82,6 +82,21 @@ public class RentalCompany {
         }
     }
 
+    public void getCars(){
+        List<Car> carsList = new ArrayList<>();
+        for (Car car : cars) {
+            carsList.add(car);
+        }
+        if(carsList.isEmpty()){
+            System.out.println("Brak samochodów w bazie! Musisz dodać samochód!");
+        }
+        else{
+            for (Car car : cars) {
+                    System.out.println(car.toString());
+            }
+        }
+    }
+
     public void getRentalHistory(Customer customer) {
         if (customers.contains(customer)) {
             System.out.println(customer.RentalHistory());

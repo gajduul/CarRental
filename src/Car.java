@@ -1,12 +1,14 @@
 public class Car {
     private int id;
+    private static int count;
     private String mark;
     private String model;
     private int year;
     private boolean available;
 
-    public Car(int id, String mark, String model, int year) {
-        this.id = id;
+    public Car(String mark, String model, int year) {
+        count++;
+        id = count;
         this.mark = mark;
         this.model = model;
         this.year = year;
