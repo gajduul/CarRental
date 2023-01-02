@@ -96,15 +96,28 @@ public class RentalCompany {
             }
         }
     }
-
-    public void getRentalHistory(Customer customer) {
-        if (customers.contains(customer)) {
-            System.out.println(customer.RentalHistory());
-        } else {
-            System.out.println("Użytkownik nie wypożyczył jeszcze żadnego auta w wypożyczalni");
+    public Customer findCustomerToOperation(String id){
+        Customer foundCustomer = null;
+        for(Customer c : customers){
+            if(c.getId().equals(id)){
+                foundCustomer = c;
+                break;
+            }
         }
+        return foundCustomer;
     }
 
+    public Car findCarToOperation(String id){
+        Car foundCar = null;
+        for(Car c : cars){
+            if(c.getId().equals(id)){
+                foundCar = c;
+                break;
+            }
+        }
+        return foundCar;
+
+    }
 
 
 }

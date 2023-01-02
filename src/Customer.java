@@ -1,19 +1,19 @@
 import java.util.List;
 import java.util.ArrayList;
 public class Customer {
-    private int id;
+    private String id;
     private String name;
     private String surname;
     private String phone;
     private String email;
     private String adress;
-    private static int count;
+    private static int count = 1 ;
     private Car rentedCar;
-    private List<Car> rentalHistory;
+
 
     public Customer(String name,String surname,String phone,String email,String adress){
+        id = String.valueOf(count);
         count++;
-        id = count;
         this.name = name;
         this.surname = surname;
         this.phone = phone;
@@ -22,14 +22,13 @@ public class Customer {
     }
 
     public String toString(){
-        return name +" "+ surname +" "+ phone +" "+ email +" "+ adress;
+        return "ID:"+id + " Imie:" + name +" Nazwisko:"+ surname +" Numer telefonu:"+ phone +" Adres E-mail:"+ email +" Adres zamieszkania:"+ adress;
     }
 
     public void rentCar(Car car){
         if(rentedCar == null){
             rentedCar = car;
             car.rentCar();
-            rentalHistory.add(car);
         } else {
             System.out.println("Użytkownik obecnie posiada wypożyczone auto!");
         }
@@ -48,7 +47,10 @@ public class Customer {
     public boolean hasRentedCars(Car car){
         return rentedCar == car;
     }
-    public List<Car> RentalHistory() {
-        return rentalHistory;
+
+    public String getId(){
+        return id;
     }
 }
+
+

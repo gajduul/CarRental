@@ -1,23 +1,27 @@
 public class Car {
-    private int id;
-    private static int count;
+    private String id;
+    private static int count = 1;
     private String mark;
     private String model;
     private int year;
     private boolean available;
 
     public Car(String mark, String model, int year) {
+        id = String.valueOf(count);
         count++;
-        id = count;
         this.mark = mark;
         this.model = model;
         this.year = year;
         this.available = true;
     }
+    public String toString(){
+        return "ID:"+ id + " Marka:" + mark +" Model:"+ model +" Rok Produkcji:"+ year +" Czy dostępny:"+ available +" ";
+    }
 
     public void rentCar(){
         if(available){
             available = false;
+            System.out.println("Auto zostało wypożyczone");
         }
         else{
             System.out.println("Auto jest obecnie niedostępne do wypożczenia!");
@@ -44,4 +48,7 @@ public class Car {
         return String.format("ID: %d, Marka: %s, Model: %s, Rok produkcji: %d", id, mark, model, year);
     }
 
+    public String getId(){
+        return id;
+    }
 }
