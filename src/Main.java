@@ -1,9 +1,4 @@
-import javax.annotation.processing.SupportedSourceVersion;
-import java.io.Console;
-import java.util.Collections;
 import java.util.Scanner;
-import java.util.List;
-import java.util.ArrayList;
 
 public class Main {
    public static void main(String[] args) {
@@ -30,24 +25,23 @@ public class Main {
                 case 1:
                     System.out.println("Kto wypożycza samochód? (wskaż ID klienta)");
                     rentalCompany.getCustomers();
-                    System.out.println("ID: ");
+                    System.out.print("ID: ");
                     idCustomerRental = scanner.next();
                     Customer customerToRent = rentalCompany.findCustomerToOperation(idCustomerRental);
 
                     System.out.println("Jakie auto chcesz wypożyczyć? (wskaż ID samochodu)");
                     rentalCompany.getCars();
-                    System.out.println("ID: ");
+                    System.out.print("ID: ");
                     idCarRental = scanner.next();
 
                     Car carToRent = rentalCompany.findCarToOperation(idCarRental);
                     rentalCompany.rentCar(customerToRent,carToRent);
-
                 case 2:
                     // Kod do wykonania dla opcji 2 (zwrot samochodu)
                     break;
                 case 3:
-                    System.out.println("Lista samochodów:");
-                    rentalCompany.getCars();
+                    System.out.println("Lista dostępnych samochodów:");
+                    rentalCompany.getAvailableCars();
                     break;
                 case 4:
                     System.out.println("Tutaj dodasz samochód! Najpierw potrzebujemy o nim informacje");
@@ -79,7 +73,6 @@ public class Main {
 
                     Customer customer = new Customer(name,surname,phone,email,address);
                     rentalCompany.addCustomer(customer);
-
                     break;
                 case 7:
                     break;

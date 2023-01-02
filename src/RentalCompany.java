@@ -1,14 +1,12 @@
-import java.io.Console;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class RentalCompany {
     private String name;
     private String address;
     private String phone;
     private List<Car> cars;
-    Scanner scanner = new Scanner(System.in);
     private List<Customer> customers;
 
 
