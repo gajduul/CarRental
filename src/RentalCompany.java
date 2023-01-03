@@ -55,16 +55,6 @@ public class RentalCompany {
         customers.remove(customer);
     }
 
-    public List<Car> getAvailableCars() {
-        List<Car> availableCars = new ArrayList<>();
-        for (Car car : cars) {
-            if (car.isAvailable()) {
-                availableCars.add(car);
-            }
-        }
-        return availableCars;
-    }
-
     public void getCustomers(){
         List<Customer> customerList = new ArrayList<>();
         for (Customer customer : customers) {
