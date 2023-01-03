@@ -4,7 +4,6 @@
     <list default="true" id="ee35de44-7a86-4ccd-a254-a4d7ab8df9fb" name="Changes" comment="vehicle and rental classes creation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RentalCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RentalCompany.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +81,7 @@
       <workItem from="1672678494725" duration="2129000" />
       <workItem from="1672694393121" duration="1191000" />
       <workItem from="1672754049820" duration="744000" />
+      <workItem from="1672755699317" duration="1691000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1670688578863</created>
