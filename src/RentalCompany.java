@@ -110,7 +110,4 @@ public class RentalCompany {
         }
         return foundCar;
     }
-
-
 }
-
