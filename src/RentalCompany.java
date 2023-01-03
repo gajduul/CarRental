@@ -19,11 +19,10 @@ public class RentalCompany {
     }
 
     public void rentCar(Customer customer, Car car) {
-
         if (cars.contains(car) && car.isAvailable()) {
             customer.rentCar(car);
         } else {
-            System.out.println("Auto nie jest możliwe do wypożyczenia");
+            System.out.println("Auto jest już wypożyczone");
         }
     }
 
@@ -31,28 +30,33 @@ public class RentalCompany {
         if (customers.contains(customer) && customer.hasRentedCars(car)) {
             customer.returnCar(car);
         } else {
-            System.out.println("Klient nie wypożyczył żadnego samochodu");
+            System.out.println("Klient nie wypożyczył żadnego samochodu!");
         }
     }
 
     public void addCar(Car car) {
         if (!cars.contains(car)) {
             cars.add(car);
+            System.out.println("Samochód został dodany do bazy!");
         }
     }
 
     public void removeCar(Car car) {
         cars.remove(car);
+        System.out.println("Samochód został usunięty z bazy!");
     }
 
     public void addCustomer(Customer customer) {
         if (!customers.contains(customer)) {
             customers.add(customer);
+            System.out.println("Klient został dodany do bazy!");
         }
+
     }
 
     public void removeCustomer(Customer customer) {
         customers.remove(customer);
+        System.out.println("Klient został usunięty z bazy!");
     }
 
     public void getCustomers(){
@@ -84,6 +88,7 @@ public class RentalCompany {
             }
         }
     }
+
     public Customer findCustomerToOperation(String id){
         Customer foundCustomer = null;
         for(Customer c : customers){
@@ -104,7 +109,6 @@ public class RentalCompany {
             }
         }
         return foundCar;
-
     }
 
 

@@ -4,7 +4,7 @@ public class Main {
    public static void main(String[] args) {
         int choose = 0;
         Scanner scanner = new Scanner(System.in);
-
+        Scanner info = new Scanner(System.in);
         RentalCompany rentalCompany = new RentalCompany("JanuszRent", "Grunwaldzka 286, Gdańsk", "666 768 223");
 
         while (choose != 9) {
@@ -80,11 +80,11 @@ public class Main {
                 case 4:
                     System.out.println("Tutaj dodasz samochód! Najpierw potrzebujemy o nim informacje");
                     System.out.print("Marka: ");
-                    String mark = scanner.next();
+                    String mark = info.nextLine();
                     System.out.print("Model: ");
-                    String model = scanner.next();
+                    String model = info.nextLine();
                     System.out.print("Rok produkcji ");
-                    int year = Integer.parseInt(scanner.next());
+                    int year = Integer.parseInt(info.nextLine());
 
                     Car car = new Car(mark,model,year);
                     rentalCompany.addCar(car);
@@ -110,17 +110,18 @@ public class Main {
                     rentalCompany.getCustomers();
                     break;
                 case 7:
+
                     System.out.println("Tutaj dodasz klienta! Najpierw potrzebujemy o nim informacje");
                     System.out.print("Imie: ");
-                    String name = scanner.next();
+                    String name = info.nextLine();
                     System.out.print("Nazwisko: ");
-                    String surname = scanner.next();
+                    String surname = info.nextLine();
                     System.out.print("Numer telefonu: ");
-                    String phone = scanner.next();
+                    String phone = info.nextLine();
                     System.out.print("Adres e-mail: ");
-                    String email = scanner.next();
+                    String email = info.nextLine();
                     System.out.print("Adres zamieszkania: ");
-                    String address = scanner.next();
+                    String address = info.nextLine();
 
                     Customer customer = new Customer(name,surname,phone,email,address);
                     rentalCompany.addCustomer(customer);
@@ -128,8 +129,8 @@ public class Main {
 
                 case 8:
                     String idCustomerToRemove;
-                    System.out.println("Witaj w panelu wypożyczania samochodu!");
-                    System.out.println("Kto wypożycza samochód? (wskaż ID klienta)");
+                    System.out.println("Tutaj usuniesz klienta! Najpierw potrzebujemy o nim informacje!");
+                    System.out.println("Kogo chcesz usunąć? (wskaż ID klienta)");
                     rentalCompany.getCustomers();
                     System.out.print("ID: ");
                     idCustomerToRemove = scanner.next();
