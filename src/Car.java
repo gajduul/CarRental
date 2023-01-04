@@ -15,7 +15,7 @@ public class Car {
         this.available = true;
     }
     public String toString(){
-        return "ID: "+id+" Marka/model: "+mark+" "+ model +" Rok Produkcji: "+ year +" Czy dostępny: "+ available +" ";
+        return "ID: "+id+" | Marka i model: "+mark+" - "+ model +" | Rok Produkcji: "+ year +" | Czy dostępny: "+ available +" ";
     }
 
     public void rentCar(){
