@@ -5,7 +5,6 @@ public class Car {
     private String model;
     private int year;
     private boolean available;
-    private String availableYesNo;
 
     public Car(String mark, String model, int year) {
         id = String.valueOf(count);
@@ -14,10 +13,9 @@ public class Car {
         this.model = model;
         this.year = year;
         this.available = true;
-        this.availableYesNo = availableYN();
     }
     public String toString(){
-        return "ID: "+id+" | Marka i model: "+mark+" - "+ model +" | Rok Produkcji: "+ year +" | Dostępność: "+ availableYesNo +" ";
+        return "ID: "+id+" | Marka i model: "+mark+" - "+ model +" | Rok Produkcji: "+ year +" | Dostępność: "+ availableYN(available) +" ";
     }
 
 
@@ -48,12 +46,10 @@ public class Car {
             return false;
     }
 
-    private String availableYN(){
-        if(available){
-            return availableYesNo = "tak";
-        }else{
-            return availableYesNo = "nie";
-        }
+    private String availableYN(boolean available){
+        if(available)
+            return "tak";
+        return "nie";
     }
 
     public String getId(){

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee35de44-7a86-4ccd-a254-a4d7ab8df9fb" name="Changes" comment="Overall apperance changes">
+    <list default="true" id="ee35de44-7a86-4ccd-a254-a4d7ab8df9fb" name="Changes" comment="Added method availableYN for car.java&#10;nowa metoda która drukuje &quot;tak&quot; i &quot;nie&quot; zamiast true or false na liscie samochodow">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
     </list>
@@ -91,7 +91,7 @@
       <workItem from="1672754049820" duration="744000" />
       <workItem from="1672755699317" duration="1943000" />
       <workItem from="1672770997060" duration="2586000" />
-      <workItem from="1672841937124" duration="4509000" />
+      <workItem from="1672841937124" duration="6880000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1670688578863</created>
@@ -184,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672842537628</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added method availableYN for car.java&#10;nowa metoda która drukuje &quot;tak&quot; i &quot;nie&quot; zamiast true or false na liscie samochodow">
+      <created>1672847826616</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1672847826616</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,7 +237,8 @@
     <MESSAGE value="Car print changes" />
     <MESSAGE value="Customer print changes" />
     <MESSAGE value="Overall apperance changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Overall apperance changes" />
+    <MESSAGE value="Added method availableYN for car.java&#10;nowa metoda która drukuje &quot;tak&quot; i &quot;nie&quot; zamiast true or false na liscie samochodow" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added method availableYN for car.java&#10;nowa metoda która drukuje &quot;tak&quot; i &quot;nie&quot; zamiast true or false na liscie samochodow" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Car_java$Main.ic" NAME="Main Coverage Results" MODIFIED="1672773412798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
