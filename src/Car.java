@@ -5,6 +5,7 @@ public class Car {
     private String model;
     private int year;
     private boolean available;
+    private String availableYesNo;
 
     public Car(String mark, String model, int year) {
         id = String.valueOf(count);
@@ -13,10 +14,12 @@ public class Car {
         this.model = model;
         this.year = year;
         this.available = true;
+        this.availableYesNo = availableYN();
     }
     public String toString(){
-        return "ID: "+id+" | Marka i model: "+mark+" - "+ model +" | Rok Produkcji: "+ year +" | Czy dostępny: "+ available +" ";
+        return "ID: "+id+" | Marka i model: "+mark+" - "+ model +" | Rok Produkcji: "+ year +" | Dostępność: "+ availableYesNo +" ";
     }
+
 
     public void rentCar(){
         if(available){
@@ -43,6 +46,14 @@ public class Car {
 
         else
             return false;
+    }
+
+    private String availableYN(){
+        if(available){
+            return availableYesNo = "tak";
+        }else{
+            return availableYesNo = "nie";
+        }
     }
 
     public String getId(){
