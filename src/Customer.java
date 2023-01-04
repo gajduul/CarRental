@@ -22,7 +22,7 @@ public class Customer {
     }
 
     public String toString(){
-        return "ID:"+id +" Imie i nazwisko: " + name +" "+surname+" Nr tel:"+phone+" E-mail:"+email+" Adres:"+adress;
+        return "ID: "+id +" | Imie i nazwisko: " + name +" "+surname+" | Nr tel:"+phone+" | E-mail:"+email+" | Adres:"+adress;
     }
 
     public void rentCar(Car car){
