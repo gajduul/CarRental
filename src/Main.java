@@ -83,7 +83,7 @@ public class Main {
                     String mark = info.nextLine();
                     System.out.print("Model: ");
                     String model = info.nextLine();
-                    System.out.print("Rok produkcji ");
+                    System.out.print("Rok produkcji: ");
                     int year = Integer.parseInt(info.nextLine());
 
                     Car car = new Car(mark,model,year);

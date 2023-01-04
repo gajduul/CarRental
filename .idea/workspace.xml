@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee35de44-7a86-4ccd-a254-a4d7ab8df9fb" name="Changes" comment="vehicle and rental classes creation">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
+    <list default="true" id="ee35de44-7a86-4ccd-a254-a4d7ab8df9fb" name="Changes" comment="Customer print changes">
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,6 +85,7 @@
       <workItem from="1672754049820" duration="744000" />
       <workItem from="1672755699317" duration="1943000" />
       <workItem from="1672770997060" duration="2586000" />
+      <workItem from="1672841937124" duration="562000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1670688578863</created>
@@ -158,7 +157,21 @@
       <option name="project" value="LOCAL" />
       <updated>1672418109405</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Car print changes">
+      <created>1672842054259</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1672842054259</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Customer print changes">
+      <created>1672842266044</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1672842266044</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,7 +214,9 @@
     <MESSAGE value="client update" />
     <MESSAGE value="vehicle and rental classes creation" />
     <MESSAGE value="test commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="test commit" />
+    <MESSAGE value="Car print changes" />
+    <MESSAGE value="Customer print changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Customer print changes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Car_java$Main.ic" NAME="Main Coverage Results" MODIFIED="1672773412798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
