@@ -44,8 +44,12 @@ public class Customer {
             }
         }
     }
-    public boolean hasRentedCars(Car car){
-        return rentedCar == car;
+    public boolean hasRentedCars(Car car){return rentedCar == car;}
+    public  boolean rentedAnyCar(){
+        if (rentedCar == null)
+            return false;
+        else
+            return true;
     }
 
     public String getId(){

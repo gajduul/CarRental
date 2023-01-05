@@ -15,7 +15,7 @@ public class Car {
         this.available = true;
     }
     public String toString(){
-        return "ID: "+id+" | Marka i model: "+mark+" - "+ model +" | Rok Produkcji: "+ year +" | Dostępność: "+ availableYN(available) +" ";
+        return "ID: "+id+" | Samochód: "+mark+" "+ model +" | Rok Produkcji: "+ year +" | Czy dostępny?: "+ availableYN(available) +" ";
     }
 
 
@@ -48,8 +48,8 @@ public class Car {
 
     private String availableYN(boolean available){
         if(available)
-            return "tak";
-        return "nie";
+            return "Tak";
+        return "Nie";
     }
 
     public String getId(){

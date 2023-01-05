@@ -23,54 +23,89 @@ public class Main {
 
             switch (choose) {
                 case 1:
+                    Customer customerToRent;
+                    Car carToRent;
                     String idCustomerRental;
                     String idCarRental;
+
                     System.out.println("Witaj w panelu wypożyczania samochodu!");
+
+                    if(rentalCompany.isCustomerExist()){
                     System.out.println("Kto wypożycza samochód? (wskaż ID klienta)");
                     rentalCompany.getCustomers();
                     System.out.print("ID: ");
                     idCustomerRental = scanner.next();
-                    Customer customerToRent = rentalCompany.findCustomerToOperation(idCustomerRental);
+                    customerToRent = rentalCompany.findCustomerToOperation(idCustomerRental);
+                    if (customerToRent == null) {
+                        System.out.println("Nie ma Klienta z takim ID! Spróbuj ponownie wpisując poprawne ID");
+                        break;
+                    }
+                    }
+                    else {
+                        System.out.println("Brak klientów w bazie!");
+                        break;
+                    }
 
-                    System.out.println("Jakie auto chcesz wypożyczyć? (wskaż ID samochodu)");
-                    rentalCompany.getCars();
-                    System.out.print("ID: ");
-                    idCarRental = scanner.next();
-
-                    Car carToRent = rentalCompany.findCarToOperation(idCarRental);
-
-                    if (customerToRent != null) {
-                        if (carToRent != null) {
-                            rentalCompany.rentCar(customerToRent, carToRent);
-                        } else {
+                    if(rentalCompany.isCarExist()) {
+                        System.out.println("Jakie auto chcesz wypożyczyć? (wskaż ID samochodu)");
+                        rentalCompany.getCars();
+                        System.out.print("ID: ");
+                        idCarRental = scanner.next();
+                        carToRent = rentalCompany.findCarToOperation(idCarRental);
+                        if (carToRent == null) {
                             System.out.println("Nie ma auta z takim ID! Spróbuj ponownie wpisując poprawne ID");
+                            break;
+                        }
+                    }
+                    else {
+                        System.out.println("Brak samochodów w bazie!");
+                        break;
+                    }
+
+                    rentalCompany.rentCar(customerToRent,carToRent);
+                    break;
+                case 2:
+                    String idCustomerReturn;
+                    Car carToReturn;
+                    String idCarRenturn;
+                    Customer customerToReturn;
+
+                    System.out.println("Witaj w panelu zwracania samochodu!");
+
+                    if(rentalCompany.isCustomerExist()){
+                        System.out.println("Kto zwraca samochód? (wskaż ID klienta)");
+                        rentalCompany.getCustomers();
+                        System.out.print("ID: ");
+                        idCustomerReturn = scanner.next();
+                        customerToReturn = rentalCompany.findCustomerToOperation(idCustomerReturn);
+                        if(customerToReturn == null)
+                        {
+                            System.out.println("Nie ma klienta z takim ID! Spróbuj ponownie wpisując poprawne ID");
+                            break;
                         }
                     }
                     else{
-                        System.out.println("Nie ma klienta z takim ID! Spróbuj ponownie wpisując poprawne ID");
+                        System.out.println("Brak klientów w bazie!");
+                        break;
                     }
-                    break;
 
-                case 2:
-                    String idCustomerReturn;
-                    String idCarRenturn;
-                    System.out.println("Witaj w panelu zwracania samochodu!");
-                    System.out.println("Kto zwraca samochód? (wskaż ID klienta)");
-                    rentalCompany.getCustomers();
-                    System.out.print("ID: ");
-                    idCustomerReturn = scanner.next();
-                    Customer customerToReturn = rentalCompany.findCustomerToOperation(idCustomerReturn);
+                    if(rentalCompany.isCarExist()){
+                        System.out.println("Jakie auto chcesz zwrócić? (wskaż ID samochodu)");
+                        rentalCompany.getCars();
+                        System.out.print("ID: ");
+                        idCarRenturn = scanner.next();
+                        carToReturn = rentalCompany.findCarToOperation(idCarRenturn);
+                        if(carToReturn== null) {
+                            System.out.println("Nie ma auta z takim ID! Spróbuj ponownie wpisując poprawne ID");
+                            break;
+                        }
+                    }
+                    else{
+                        System.out.println("Brak samochodów w bazie!");
+                        break;
+                    }
 
-                    System.out.println("Jakie auto chcesz zwrócić? (wskaż ID samochodu)");
-                    rentalCompany.getCars();
-                    System.out.print("ID: ");
-                    idCarRenturn = scanner.next();
-
-                    Car carToReturn = rentalCompany.findCarToOperation(idCarRenturn);
-                    if(carToReturn!= null)
-                        rentalCompany.returnCar(customerToReturn,carToReturn);
-                    else
-                        System.out.println("Nie ma auta z takim ID! Spróbuj ponownie wpisując poprawne ID");
+                    rentalCompany.returnCar(customerToReturn,carToReturn);
                     break;
 
                 case 3:
@@ -92,25 +127,32 @@ public class Main {
 
                 case 5:
                     String idCarRemove;
-                    System.out.println("Tutaj usuniesz samochód");
 
-                    System.out.println("Jakie auto chcesz usunąć? (wskaż ID samochodu)");
-                    rentalCompany.getCars();
-                    System.out.print("ID: ");
-                    idCarRemove = scanner.next();
+                    if(rentalCompany.isCarExist()) {
+                        System.out.println("Tutaj usuniesz samochód");
+                        System.out.println("Jakie auto chcesz usunąć? (wskaż ID samochodu)");
+                        rentalCompany.getCars();
+                        System.out.print("ID: ");
+                        idCarRemove = scanner.next();
 
-                    Car carToRemove = rentalCompany.findCarToOperation(idCarRemove);
-                    if(carToRemove != null)
-                        rentalCompany.removeCar(carToRemove);
-                    else
-                        System.out.println("Nie ma auta z takim ID! Spróbuj ponownie wpisując prawidłowe ID");
-                    break;
+                        Car carToRemove = rentalCompany.findCarToOperation(idCarRemove);
+                        if (carToRemove != null)
+                            rentalCompany.removeCar(carToRemove);
+                        else
+                            System.out.println("Nie ma auta z takim ID! Spróbuj ponownie wpisując prawidłowe ID");
+                        break;
+                    }
+                    else {
+                        System.out.println("Brak samochodów w bazie!");
+                        break;
+                    }
+
                 case 6:
                     System.out.println("Lista klientów:");
                     rentalCompany.getCustomers();
                     break;
-                case 7:
 
+                case 7:
                     System.out.println("Tutaj dodasz klienta! Najpierw potrzebujemy o nim informacje");
                     System.out.print("Imie: ");
                     String name = info.nextLine();
@@ -129,18 +171,28 @@ public class Main {
 
                 case 8:
                     String idCustomerToRemove;
-                    System.out.println("Tutaj usuniesz klienta! Najpierw potrzebujemy o nim informacje!");
-                    System.out.println("Kogo chcesz usunąć? (wskaż ID klienta)");
-                    rentalCompany.getCustomers();
-                    System.out.print("ID: ");
-                    idCustomerToRemove = scanner.next();
-                    Customer customerToRemove = rentalCompany.findCustomerToOperation(idCustomerToRemove);
+                    Customer customerToRemove;
 
-                    if(customerToRemove != null)
-                        rentalCompany.removeCustomer(customerToRemove);
+                    if(rentalCompany.isCustomerExist()) {
+                        System.out.println("Tutaj usuniesz klienta! Najpierw potrzebujemy o nim informacje!");
+                        System.out.println("Kogo chcesz usunąć? (wskaż ID klienta)");
+                        rentalCompany.getCustomers();
+                        System.out.print("ID: ");
+                        idCustomerToRemove = scanner.next();
+                        customerToRemove = rentalCompany.findCustomerToOperation(idCustomerToRemove);
+                        if (customerToRemove != null) {
+                            rentalCompany.removeCustomer(customerToRemove);
+                            break;
+                        } else {
+                            System.out.println("Nie ma klienta z takim ID! Spróbuj ponownie wpisując poprawne ID");
+                            break;
+                        }
+                    }
                     else
-                        System.out.println("Nie ma klienta z takim ID! Spróbuj ponownie wpisując poprawne ID");
-                    break;
+                    {
+                        System.out.println("Brak Klientów w bazie! ");
+                        break;
+                    }
 
                 case 9:
                     System.out.println("Żegnaj!");

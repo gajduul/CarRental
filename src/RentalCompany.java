@@ -29,8 +29,12 @@ public class RentalCompany {
     public void returnCar(Customer customer, Car car) {
         if (customers.contains(customer) && customer.hasRentedCars(car)) {
             customer.returnCar(car);
+            System.out.println("Auto zostało zwrócone!");
         } else {
-            System.out.println("Klient nie wypożyczył żadnego samochodu!");
+            if(customer.rentedAnyCar())
+                System.out.println("Klient ma wypożyczony inny samochód!");
+            else
+                System.out.println("Klient nie wypożyczył żadnego samochodu!");
         }
     }
 
@@ -110,4 +114,18 @@ public class RentalCompany {
         }
         return foundCar;
     }
+
+    public boolean isCustomerExist (){
+        if(customers.isEmpty())
+            return false;
+        else
+            return true;
+    }
+    public boolean isCarExist (){
+        if(cars.isEmpty())
+            return false;
+        else
+            return true;
+    }
+
 }
