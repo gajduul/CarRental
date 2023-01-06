@@ -31,7 +31,7 @@ public class RentalCompany {
             customer.returnCar(car); //Operacja zwrotu auta jeśli warunek jest TRUE
             System.out.println("Auto zostało zwrócone!");
         } else {
-            if(customer.rentedAnyCar()) //Sprawdzenie czy użytkownik posiada jakikolwiek samochód wypożyczone
+            if (customer.rentedAnyCar()) //Sprawdzenie czy użytkownik posiada jakikolwiek samochód wypożyczone
                 System.out.println("Klient ma wypożyczony inny samochód!"); //Informacja do użytkownika że wypożyczone jest inne auto jeśli warunek jest TRUE
             else
                 System.out.println("Klient nie wypożyczył żadnego samochodu!"); //Informacja że użytkownik nie ma żadnego auta wypożyczonego jeśli warunek jest FALSE
@@ -63,40 +63,38 @@ public class RentalCompany {
         System.out.println("Klient został usunięty z bazy!");
     }
 
-    public void getCustomers(){ //Metoda wyświetlająca użytkowników z bazy
+    public void getCustomers() { //Metoda wyświetlająca użytkowników z bazy
         List<Customer> customerList = new ArrayList<>(); //Utworzenie tymczasowej listy customerList
         for (Customer customer : customers) { //Za pomocą pętli for dodanie użytkowników z listy customers to listy customerList
             customerList.add(customer);
         }
-        if(customerList.isEmpty()){ //Sprawdzenie czy lista użytkowników nie jest pusta. Jeśli tak to komunikat że nie ma nic w bazie
+        if (customerList.isEmpty()) { //Sprawdzenie czy lista użytkowników nie jest pusta. Jeśli tak to komunikat że nie ma nic w bazie
             System.out.println("Brak klientów w bazie! Musisz dodać klienta!");
-        }
-        else{
+        } else {
             for (Customer customer : customers) { //Jeśli lista nie jest pusta to wyświetlamy użytkowników
                 System.out.println(customer.toString());
             }
         }
     }
 
-    public void getCars(){//Metoda wyświetlająca auta z bazy
+    public void getCars() {//Metoda wyświetlająca auta z bazy
         List<Car> carsList = new ArrayList<>(); //Utworzenie tymczasowej listy carsList
         for (Car car : cars) {//Za pomocą pętli for dodanie użytkowników z listy cars to listy carsList
             carsList.add(car);
         }
-        if(carsList.isEmpty()){//Sprawdzenie czy lista aut nie jest pusta. Jeśli tak to komunikat że nie ma nic w bazie
+        if (carsList.isEmpty()) {//Sprawdzenie czy lista aut nie jest pusta. Jeśli tak to komunikat że nie ma nic w bazie
             System.out.println("Brak samochodów w bazie! Musisz dodać samochód!");
-        }
-        else{
+        } else {
             for (Car car : cars) {//Jeśli lista nie jest pusta to wyświetlamy auta
-                    System.out.println(car.toString());
+                System.out.println(car.toString());
             }
         }
     }
 
-    public Customer findCustomerToOperation(String id){ // Metoda która szuka użytkownika o danym ID, które zostało podane przez użytkownika
+    public Customer findCustomerToOperation(String id) { // Metoda która szuka użytkownika o danym ID, które zostało podane przez użytkownika
         Customer foundCustomer = null; //Utworzenie zmiennej pomocniczej
-        for(Customer c : customers){ //Przeszukanie listy customers w poszukiwaniu użytkownika
-            if(c.getId().equals(id)){ //Jeśli metoda getID z klasy Customer zwróci to samo ID, które podał użytkownik otrzymamy wartość true
+        for (Customer c : customers) { //Przeszukanie listy customers w poszukiwaniu użytkownika
+            if (c.getId().equals(id)) { //Jeśli metoda getID z klasy Customer zwróci to samo ID, które podał użytkownik otrzymamy wartość true
                 foundCustomer = c; //Przypisanie to naszej pomocniczej zmiennej obiektu, który zwrócił to samo ID co szukane
                 break; //Wychodzimy z pętli
             }
@@ -104,10 +102,10 @@ public class RentalCompany {
         return foundCustomer; //Zwracamy obiekt o szukanym ID
     }
 
-    public Car findCarToOperation(String id){ //Metoda, która szuka auta o danym ID, które zostało podane przez użytkownika. METODA BLIŹNIACZA DO findCustomerToOperation
+    public Car findCarToOperation(String id) { //Metoda, która szuka auta o danym ID, które zostało podane przez użytkownika. METODA BLIŹNIACZA DO findCustomerToOperation
         Car foundCar = null;
-        for(Car c : cars){
-            if(c.getId().equals(id)){
+        for (Car c : cars) {
+            if (c.getId().equals(id)) {
                 foundCar = c;
                 break;
             }
@@ -115,17 +113,26 @@ public class RentalCompany {
         return foundCar;
     }
 
-    public boolean isCustomerExist (){ // Metoda pomocnicza - zwraca informację czy mamy jakiegokolwiek użytkownika w bazie
-        if(customers.isEmpty())
-            return false;
-        else
-            return true;
-    }
-    public boolean isCarExist (){// Metoda pomocnicza - zwraca informację czy mamy jakiekolwiek auto w bazie
-        if(cars.isEmpty())
+    public boolean isCustomerExist() { // Metoda pomocnicza - zwraca informację czy mamy jakiegokolwiek użytkownika w bazie
+        if (customers.isEmpty())
             return false;
         else
             return true;
     }
 
+    public boolean isCarExist() {// Metoda pomocnicza - zwraca informację czy mamy jakiekolwiek auto w bazie
+        if (cars.isEmpty())
+            return false;
+        else
+            return true;
+    }
+
+    public Car getRentedCar(Customer customer) {
+        if (customers.contains(customer)) {
+            return customer.getRentedCar();
+        } else {
+            System.out.println("Nie ma takiego użytkownika w bazie!");
+            return null;
+        }
+    }
 }

@@ -9,7 +9,7 @@ public class Customer {
     private String adress;
     private static int count = 1 ;
     private Car rentedCar;
-
+    private List<Car> rentedCarList;
 
     public Customer(String name,String surname,String phone,String email,String adress){ //Konstruktor obiektu Customer
         id = String.valueOf(count); // Przypisanie użytkownikowi ID z licznika
@@ -52,6 +52,9 @@ public class Customer {
             return true; //Zwraca true jeśli TAK
     }
 
+    public Car getRentedCar(){
+        return rentedCar;
+    }
     public String getId(){//Metoda pomocnicza, która zwraca ID danego użytkownika. Używana w metodzie findCustomerToOperation w klasie RentalCompany
         return id;
     }

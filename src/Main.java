@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -6,20 +7,23 @@ public class Main {
         int choose = 0;
         Scanner scanner = new Scanner(System.in);
         Scanner info = new Scanner(System.in);
+        List<Car> rentedCar = null;
         RentalCompany rentalCompany = new RentalCompany("JanuszRent", "Grunwaldzka 286, Gdańsk", "666 768 223");
 
-        while (choose != 9) {
+        while (choose != 10) {
             System.out.println("--- Menu ---");
             System.out.println("1. Wypożyczenie samochodu");
             System.out.println("2. Zwrot samochodu");
-            System.out.println("3. Lista samochodów");
-            System.out.println("4. Dodanie samochodu");
-            System.out.println("5. Usunięcie samochodu");
-            System.out.println("6. Lista Klientów");
-            System.out.println("7. Dodanie klienta");
-            System.out.println("8. Usunięcie klienta");
-            System.out.println("9. Wyjście");
+            System.out.println("3. Informacja o wypożyczonym aucie przez klienta");
+            System.out.println("4. Lista samochodów");
+            System.out.println("5. Dodanie samochodu");
+            System.out.println("6. Usunięcie samochodu");
+            System.out.println("7. Lista Klientów");
+            System.out.println("8. Dodanie klienta");
+            System.out.println("9. Usunięcie klienta");
+            System.out.println("10. Wyjście");
             System.out.print("Wybierz opcję: ");
+
             if(scanner.hasNextInt())
                 choose = scanner.nextInt();
             else {
@@ -116,10 +120,38 @@ public class Main {
                     break;
 
                 case 3:
+                    String idCustomerToInfo;
+                    Customer customerToInfo;
+
+                    if(rentalCompany.isCustomerExist()) {
+                        System.out.println("Tutaj możesz zobaczyć jakie wypożyczenia aut ma dany użytkownik!");
+                        System.out.println("Które użytkownika wypożyczenia chcesz zobaczyć? (wskaż ID klienta)");
+                        rentalCompany.getCustomers();
+                        System.out.print("ID: ");
+                        idCustomerToInfo = scanner.next();
+                        customerToInfo = rentalCompany.findCustomerToOperation(idCustomerToInfo);
+
+                        Car rentedCarByCustomer = rentalCompany.getRentedCar(customerToInfo);
+                        if(rentedCarByCustomer == null){
+                            System.out.println("Użytkownik nie ma wypożyczonego żadnego auta");
+                            break;
+                        }
+                        else{
+                            System.out.println("Auto wypożyczone przez użytkownika to:");
+                            System.out.println(rentedCarByCustomer);
+                            break;
+                        }
+                    }
+                    else{
+                        System.out.println("Brak klientów w bazie!"); //Wyjątek wyrzucany w przypadku kiedy metoda isCustomerExist zwróci false - wyrzucane jest powiadomienie
+                        break;
+                    }
+
+                case 4:
                     System.out.println("Lista samochodów:");
                     rentalCompany.getCars(); //Zwrócenie listy aut
                     break;
-                case 4:
+                case 5:
 
                     System.out.println("Tutaj dodasz samochód! Najpierw potrzebujemy o nim informacje"); //Metoda zczytuje od użytkownika dane auta
                     System.out.print("Marka: ");
@@ -133,7 +165,7 @@ public class Main {
                     rentalCompany.addCar(car); //Dodanie auta
                     break;
 
-                case 5:
+                case 6:
                     String idCarRemove;
 
                     if(rentalCompany.isCarExist()) { //To samo co case 1 i case 2
@@ -155,12 +187,12 @@ public class Main {
                         break;
                     }
 
-                case 6:
+                case 7:
                     System.out.println("Lista klientów:"); //Wyświetlenie listy użytkowników
                     rentalCompany.getCustomers();
                     break;
 
-                case 7:
+                case 8:
                     System.out.println("Tutaj dodasz klienta! Najpierw potrzebujemy o nim informacje"); //Metoda zczytuje dane od użytkownika i tworzy obiekt
                     System.out.print("Imie: ");
                     String name = info.nextLine();
@@ -177,7 +209,7 @@ public class Main {
                     rentalCompany.addCustomer(customer);
                     break;
 
-                case 8:
+                case 9:
                     String idCustomerToRemove;
                     Customer customerToRemove;
 
@@ -202,10 +234,9 @@ public class Main {
                         break;
                     }
 
-                case 9:
-                    System.out.println("Żegnaj!"); //Wyjście z programu
+                case 10:
+                    System.out.println("Żegnaj!");
                     break;
-
                 default:
                     System.out.println("Niewłaściwa opcja!"); //Wpisanie innej cyfry niż te z zakresu 1-9 powoduje ponowny powrót do menu bez żadnych akcji
                     break;
