@@ -163,7 +163,6 @@ public class Main {
                                 Car rentedCarByCustomer = rentalCompany.getRentedCar(customerToInfo);
                                 if (rentedCarByCustomer == null) {
                                     if (customerToInfo == null) {
-                                        System.out.println("Nie ma klienta z takim ID! Spróbuj ponownie wpisując poprawne ID");
                                         break;
                                     } else {
                                         System.out.println("Użytkownik nie ma wypożyczonego żadnego auta");
