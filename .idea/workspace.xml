@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee35de44-7a86-4ccd-a254-a4d7ab8df9fb" name="Changes" comment="-try catch łapiący numberformatexception w dodawaniu samochodu">
+    <list default="true" id="ee35de44-7a86-4ccd-a254-a4d7ab8df9fb" name="Changes" comment="-try catch w case2 dayOfRent&#10;-answerOfPayment zmienione na .equalsIgnoreCase">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673121762872</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="-try catch w case2 dayOfRent&#10;-answerOfPayment zmienione na .equalsIgnoreCase">
+      <created>1673126696974</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1673126696974</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +276,8 @@
     <MESSAGE value="- dodany else if sprawdzajacy date produkcji samochodu co by nie pochodził z przyszłosci" />
     <MESSAGE value="bug fixes" />
     <MESSAGE value="-try catch łapiący numberformatexception w dodawaniu samochodu" />
-    <option name="LAST_COMMIT_MESSAGE" value="-try catch łapiący numberformatexception w dodawaniu samochodu" />
+    <MESSAGE value="-try catch w case2 dayOfRent&#10;-answerOfPayment zmienione na .equalsIgnoreCase" />
+    <option name="LAST_COMMIT_MESSAGE" value="-try catch w case2 dayOfRent&#10;-answerOfPayment zmienione na .equalsIgnoreCase" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Car_java$Main.ic" NAME="Main Coverage Results" MODIFIED="1672773412798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
