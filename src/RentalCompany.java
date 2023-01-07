@@ -33,8 +33,7 @@ public class RentalCompany {
             if (customer.rentedAnyCar()) { //Sprawdzenie czy użytkownik posiada jakikolwiek samochód wypożyczone
                 System.out.println("Błąd, klient aktualnie ma wypożyczony ten samochód - " + customer.getRentedCar()); //Informacja do użytkownika że wypożyczone jest inne auto jeśli warunek jest TRUE
                 System.out.println("Spróbuj ponownie!");
-            }
-            else
+            } else
                 System.out.println("Klient nie wypożyczył żadnego samochodu!"); //Informacja że użytkownik nie ma żadnego auta wypożyczonego jeśli warunek jest FALSE
         }
     }
@@ -47,12 +46,10 @@ public class RentalCompany {
     }
 
     public void removeCar(Car car) { //Metoda usuwania samochodu z bazy
-        if(car.isAvailable())
-        {
+        if (car.isAvailable()) {
             cars.remove(car); //Usunięcie auta z bazy
             System.out.println("Samochód został usunięty z bazy!");
-        }
-        else {
+        } else {
             System.out.println("Nie można usunąć auta, które jest wypożyczone!");
         }
 
@@ -67,11 +64,9 @@ public class RentalCompany {
     }
 
     public void removeCustomer(Customer customer) { //Metoda usuwania użytkownika z bazy
-        if(customer.rentedAnyCar())
-        {
+        if (customer.rentedAnyCar()) {
             System.out.println("Nie można usunąć użytkownika, który posiada wypożyczone auto!");
-        }
-        else {
+        } else {
             customers.remove(customer); //Usunięcie użytkownika z bazy
             System.out.println("Klient został usunięty z bazy!");
         }

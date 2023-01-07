@@ -1,5 +1,4 @@
 import java.time.Year;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -9,7 +8,7 @@ public class Main {
         Scanner info = new Scanner(System.in);
         RentalCompany rentalCompany = new RentalCompany("JanuszRent", "Grunwaldzka 286, Gdańsk", "666 768 223");
 
-        while (choose != 11) {
+        while (choose != 10) {
             System.out.println("--- Menu ---");
             System.out.println("1. Wypożyczenie samochodu");
             System.out.println("2. Zwrot samochodu");
@@ -29,7 +28,6 @@ public class Main {
                 System.out.println("Wpisano nieprawidłowy ciąg znaków!");
                 break;
             }
-
 
             switch (choose) {
                 case 1:
@@ -73,8 +71,6 @@ public class Main {
                     rentalCompany.rentCar(customerToRent, carToRent); //Wywołanie metody rentCar mającej na celu wypożyczenie samochodu
                     break;
                 case 2:
-
-                    Scanner scanner2 = new Scanner(System.in);
                     String idCustomerReturn;
                     Car carToReturn;
                     String idCarRenturn;
@@ -89,7 +85,7 @@ public class Main {
                         System.out.println("Kto zwraca samochód? (wskaż ID klienta)");
                         rentalCompany.getCustomers();// Wyświetlenie użytkowników
                         System.out.print("ID: ");
-                        idCustomerReturn = scanner2.next();
+                        idCustomerReturn = scanner.next();
                         customerToReturn = rentalCompany.findCustomerToOperation(idCustomerReturn); //Wywołanie metody wyszukującej użytkownika o danym ID i przypisanie go do zmiennej customerToReturn
                         if (customerToReturn == null) {
                             System.out.println("Nie ma klienta z takim ID! Spróbuj ponownie wpisując poprawne ID");//Sprawdzenie czy użytkownik o danym ID został znaleziony. Jeśli nie to zwraca true i wywala wyjątek
@@ -104,40 +100,34 @@ public class Main {
                         System.out.println("Jakie auto chcesz zwrócić? (wskaż ID samochodu)");
                         rentalCompany.getCars();
                         System.out.print("ID: ");
-                        idCarRenturn = scanner2.next();
+                        idCarRenturn = scanner.next();
                         carToReturn = rentalCompany.findCarToOperation(idCarRenturn);
                         if (carToReturn == null) {
                             System.out.println("Nie ma auta z takim ID! Spróbuj ponownie wpisując poprawne ID");
                             break;
                         }
                         System.out.print("Ile dni był wypożyczony samochód? (auta wypożyczamy na tylko pełne dni): ");
-                        try {
-                            dayOfRent = scanner2.nextInt();
-                            cost = carToReturn.costOfRent(dayOfRent);
-                            if (dayOfRent < 0) {
-                                System.out.println("Ilośc dni wypożyczenia nie może być mniejsza od zera!");
-                                break;
-                            }
-                            System.out.println("Do zapłaty: " + cost);
-                        } catch (InputMismatchException ime) {
-                            System.out.println("Podaj poprawną liczbę!");
+                        dayOfRent = scanner.nextInt();
+                        cost = carToReturn.costOfRent(dayOfRent);
+                        if (dayOfRent < 0) {
+                            System.out.println("Ilośc dni wypożyczenia nie może być mniejsza od zera!");
                             break;
                         }
-
                     } else {
                         System.out.println("Brak samochodów w bazie!");
                         break;
                     }
 
+                    System.out.println("Do zapłaty: " + cost);
 
                     System.out.print("Czy kwota została zapłacona?(TAK/NIE): ");
                     Scanner answerOfPayment = new Scanner(System.in);
                     String answer = answerOfPayment.nextLine();
-                    if (answer.equalsIgnoreCase("tak")) {
+                    if (answer.equals("TAK") || answer.equals("tak") || answer.equals("Tak") || answer.equals("tAk") || answer.equals("taK")) {
                         rentalCompany.returnCar(customerToReturn, carToReturn);
                         break;
                     } else {
-                        if (answer.equalsIgnoreCase("nie")) {
+                        if (answer.equals("NIE") || answer.equals("nie") || answer.equals("Nie") || answer.equals("nIe") || answer.equals("niE")) {
                             System.out.println("Klient nie może oddać auta bez zapłaty!");
                             break;
                         } else {
@@ -160,9 +150,10 @@ public class Main {
 
                         Car rentedCarByCustomer = rentalCompany.getRentedCar(customerToInfo);
                         if (rentedCarByCustomer == null) {
-                            if (customerToInfo == null)
+                            if (customerToInfo == null) {
+                                System.out.println("Nie ma klienta z takim ID! Spróbuj ponownie wpisując poprawne ID");
                                 break;
-                            else {
+                            } else {
                                 System.out.println("Użytkownik nie ma wypożyczonego żadnego auta");
                                 break;
                             }
@@ -186,8 +177,16 @@ public class Main {
                         System.out.println("Pamiętaj że w naszej wypożyczalni auto nie może być wyprodukowane przed 2000 rokiem!");
                         System.out.print("Marka: ");
                         String mark = info.nextLine();
+                        if (!mark.matches("[a-zA-Z]+")) {
+                            System.out.println("Nieprawidłowy ciąg znaków w marce auta!");
+                            break;
+                        }
                         System.out.print("Model: ");
                         String model = info.nextLine();
+                        if (model.matches("[0-9!@#$%^&*()_+-=]+")) {
+                            System.out.println("Nieprawidłowy ciąg znaków w modelu auta!");
+                            break;
+                        }
                         System.out.print("Koszt wypożycznia za dzień: ");
                         int costPerDay = Integer.parseInt(info.nextLine());
                         System.out.print("Rok produkcji: ");
@@ -244,14 +243,41 @@ public class Main {
                     System.out.println("Tutaj dodasz klienta! Najpierw potrzebujemy o nim informacje"); //Metoda zczytuje dane od użytkownika i tworzy obiekt
                     System.out.print("Imie: ");
                     String name = info.nextLine();
+                    if (!name.matches("[\\p{L}]+")) {
+                        System.out.println("Nieprawidłowy ciąg znaków w imieniu klienta!");
+                        break;
+                    }
                     System.out.print("Nazwisko: ");
                     String surname = info.nextLine();
+                    if (!surname.matches("[\\p{L}]+")) {
+                        System.out.println("Nieprawidłowy ciąg znaków w nazwisku klienta!");
+                        break;
+                    }
                     System.out.print("Numer telefonu: ");
                     String phone = info.nextLine();
+                    if (phone.matches("\"[0-9]+\"")) {
+                        System.out.println("Nieprawidłowy ciąg znaków numeru telefonu!");
+                        break;
+                    } else {
+                        if (phone.length() > 12) {
+                            System.out.println("Numer jest za długi!");
+                            break;
+                        } else if (phone.length() < 7) {
+                            System.out.println("Numer jest za krótki!");
+                            break;
+                        }
+                    }
                     System.out.print("Adres e-mail: ");
                     String email = info.nextLine();
+                    if (email.matches("[0-9!@#$%^&*()_+-=]+")) {
+                        System.out.println("Nieprawidłowy ciąg znaków w adresie e-mail");
+                        break;
+                    }
                     System.out.print("Adres zamieszkania: ");
                     String address = info.nextLine();
+                    if (address.matches("[0-9!@#$%^&*()_+-=]+")) {
+                        System.out.println("Nieprawidłowy ciąg znaków w adresie zamieszkania");
+                    }
 
                     Customer customer = new Customer(name, surname, phone, email, address);
                     rentalCompany.addCustomer(customer);
@@ -281,10 +307,6 @@ public class Main {
                     }
 
                 case 10:
-                    System.out.println("REGULAMIN WYPOŻYCZALNI!");
-                    System.out.println("1. Klient płaci za każdy rozpoczęty wypożyczony dzień wypożyczenia");
-                    System.out.println("2. Pamiętaj o sprawdzeniu poprawności danych klienta przed dodaniem go do bazy!");
-                case 11:
                     System.out.println("Żegnaj!");
                     break;
                 default:
