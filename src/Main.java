@@ -238,8 +238,10 @@ public class Main {
                                 }
 
                                 Car carToRemove = rentalCompany.findCarToOperation(idCarRemove);
-                                if (carToRemove != null)
+                                if (carToRemove != null) {
                                     rentalCompany.removeCar(carToRemove);
+                                    break;
+                                }
                                 else {
                                     System.out.println("Nie ma auta z takim ID! Spróbuj ponownie wpisując prawidłowe ID");
                                     break;
