@@ -1,5 +1,3 @@
-import java.util.List;
-import java.util.ArrayList;
 public class Customer {
     private String id;
     private String name;
@@ -9,7 +7,6 @@ public class Customer {
     private String adress;
     private static int count = 1 ;
     private Car rentedCar;
-    private List<Car> rentedCarList;
 
     public Customer(String name,String surname,String phone,String email,String adress){ //Konstruktor obiektu Customer
         id = String.valueOf(count); // Przypisanie użytkownikowi ID z licznika

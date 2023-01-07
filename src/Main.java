@@ -1,5 +1,3 @@
-import javax.swing.*;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -7,7 +5,6 @@ public class Main {
         int choose = 0;
         Scanner scanner = new Scanner(System.in);
         Scanner info = new Scanner(System.in);
-        List<Car> rentedCar = null;
         RentalCompany rentalCompany = new RentalCompany("JanuszRent", "Grunwaldzka 286, Gdańsk", "666 768 223");
 
         while (choose != 10) {
@@ -133,8 +130,12 @@ public class Main {
 
                         Car rentedCarByCustomer = rentalCompany.getRentedCar(customerToInfo);
                         if(rentedCarByCustomer == null){
-                            System.out.println("Użytkownik nie ma wypożyczonego żadnego auta");
-                            break;
+                            if(customerToInfo == null)
+                                break;
+                            else {
+                                System.out.println("Użytkownik nie ma wypożyczonego żadnego auta");
+                                break;
+                            }
                         }
                         else{
                             System.out.println("Auto wypożyczone przez użytkownika to:");

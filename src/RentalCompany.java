@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,8 +47,15 @@ public class RentalCompany {
     }
 
     public void removeCar(Car car) { //Metoda usuwania samochodu z bazy
-        cars.remove(car); //Usunięcie auta z bazy
-        System.out.println("Samochód został usunięty z bazy!");
+        if(car.isAvailable())
+        {
+            cars.remove(car); //Usunięcie auta z bazy
+            System.out.println("Samochód został usunięty z bazy!");
+        }
+        else {
+            System.out.println("Nie można usunąć auta, które jest wypożyczone!");
+        }
+
     }
 
     public void addCustomer(Customer customer) { //Metoda dodania użytkownika do bazy
@@ -61,8 +67,14 @@ public class RentalCompany {
     }
 
     public void removeCustomer(Customer customer) { //Metoda usuwania użytkownika z bazy
-        customers.remove(customer); //Usunięcie użytkownika z bazy
-        System.out.println("Klient został usunięty z bazy!");
+        if(customer.rentedAnyCar())
+        {
+            System.out.println("Nie można usunąć użytkownika, który posiada wypożyczone auto!");
+        }
+        else {
+            customers.remove(customer); //Usunięcie użytkownika z bazy
+            System.out.println("Klient został usunięty z bazy!");
+        }
     }
 
     public void getCustomers() { //Metoda wyświetlająca użytkowników z bazy
