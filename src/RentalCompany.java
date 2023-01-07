@@ -18,37 +18,37 @@ public class RentalCompany {
     }
 
     public void rentCar(Customer customer, Car car) {//Metoda do wypożyczenia samochodu. Przyjmuje 2 obiekty - klasy Customer i Car
-        if (car.isAvailable()) { //Sprawdzenie czy auto jest dostępne
-            customer.rentCar(car); //Wypożyczenie auta
+        if (car.isAvailable()) {
+            customer.rentCar(car);
         } else {
-            System.out.println("Auto jest już wypożyczone"); //Obsługa wyjątku gdy auto nie jest dostępne
+            System.out.println("Auto jest już wypożyczone");
         }
     }
 
     public void returnCar(Customer customer, Car car) { //Metoda do zwrotu samochodu Przyjmuje 2 obiekty - klasy Customer i Car
-        if (customer.hasRentedCars(car)) { // Spradzenie czy użytkownik wypożczył dany samochód
-            customer.returnCar(car); //Operacja zwrotu auta jeśli warunek jest TRUE
+        if (customer.hasRentedCars(car)) {
+            customer.returnCar(car);
             System.out.println("Auto zostało zwrócone!");
         } else {
-            if (customer.rentedAnyCar()) { //Sprawdzenie czy użytkownik posiada jakikolwiek samochód wypożyczone
-                System.out.println("Błąd, klient aktualnie ma wypożyczony ten samochód:"); //Informacja do użytkownika że wypożyczone jest inne auto jeśli warunek jest TRUE
+            if (customer.rentedAnyCar()) {
+                System.out.println("Błąd, klient aktualnie ma wypożyczony ten samochód:");
                 System.out.println(customer.getRentedCar());
                 System.out.println("Spróbuj ponownie!");
             } else
-                System.out.println("Klient nie wypożyczył żadnego samochodu!"); //Informacja że użytkownik nie ma żadnego auta wypożyczonego jeśli warunek jest FALSE
+                System.out.println("Klient nie wypożyczył żadnego samochodu!");
         }
     }
 
-    public void addCar(Car car) { //metoda dodania samochodu do bazu
-        if (!cars.contains(car)) { //Sprawdzenie czy samochód nie istnieje już w bazie
-            cars.add(car); //Jeśli nie to dodanie go do bazy
+    public void addCar(Car car) { //metoda dodania samochodu do bazy
+        if (!cars.contains(car)) {
+            cars.add(car);
             System.out.println("Samochód został dodany do bazy!");
         }
     }
 
     public void removeCar(Car car) { //Metoda usuwania samochodu z bazy
         if (car.isAvailable()) {
-            cars.remove(car); //Usunięcie auta z bazy
+            cars.remove(car);
             System.out.println("Samochód został usunięty z bazy!");
         } else {
             System.out.println("Nie można usunąć auta, które jest wypożyczone!");
