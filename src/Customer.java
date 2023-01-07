@@ -37,7 +37,7 @@ public class Customer {
                 rentedCar = null; //Wyzerowanie zmiennej przechowującej wypożyczone przez użytkownika auto
                 car.returnCar(); // Wywołanie metody returnCar z klasy Car
             } else {
-                System.out.println("Użytkownik nie ma obecnie  wypożyczonego auta!"); //Obsługa wyjątkie gdzie użytkownik ma wypożyczony inny samochód ( warunek rentedCar == car nie jest spełniony)
+                System.out.println("Użytkownik nie ma obecnie wypożyczonego auta!"); //Obsługa wyjątkie gdzie użytkownik ma wypożyczony inny samochód ( warunek rentedCar == car nie jest spełniony)
             }
         }
     }

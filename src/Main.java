@@ -77,7 +77,7 @@ public class Main {
                     Scanner scanner2 = new Scanner(System.in);
                     String idCustomerReturn;
                     Car carToReturn;
-                    String idCarRenturn;
+                    String idCarReturn;
                     Customer customerToReturn;
                     int dayOfRent;
                     int cost;
@@ -89,12 +89,6 @@ public class Main {
                         System.out.print("ID: ");
                         idCustomerReturn = scanner2.next();
                         customerToReturn = rentalCompany.findCustomerToOperation(idCustomerReturn); //Wywołanie metody wyszukującej użytkownika o danym ID i przypisanie go do zmiennej customerToReturn
-                        if (customerToReturn == null) {
-                            System.out.println("Kto zwraca samochód? (wskaż ID klienta)");
-                            rentalCompany.getCustomers();// Wyświetlenie użytkowników
-                            System.out.print("ID: ");
-                            idCustomerReturn = scanner2.next();
-                            customerToReturn = rentalCompany.findCustomerToOperation(idCustomerReturn); //Wywołanie metody wyszukującej użytkownika o danym ID i przypisanie go do zmiennej customerToReturn
                             if (customerToReturn == null) {
                                 System.out.println("Nie ma klienta z takim ID! Spróbuj ponownie wpisując poprawne ID");//Sprawdzenie czy użytkownik o danym ID został znaleziony. Jeśli nie to zwraca true i wywala wyjątek
                                 break;
@@ -107,8 +101,8 @@ public class Main {
                             System.out.println("Jakie auto chcesz zwrócić? (wskaż ID samochodu)");
                             rentalCompany.getCars();
                             System.out.print("ID: ");
-                            idCarRenturn = scanner2.next();
-                            carToReturn = rentalCompany.findCarToOperation(idCarRenturn);
+                            idCarReturn = scanner2.next();
+                            carToReturn = rentalCompany.findCarToOperation(idCarReturn);
                             if (carToReturn == null) {
                                 System.out.println("Nie ma auta z takim ID! Spróbuj ponownie wpisując poprawne ID");
                                 break;
@@ -148,7 +142,7 @@ public class Main {
                                 break;
                             }
                         }
-                    }
+
 
                         case 3:
                             String idCustomerToInfo;
@@ -160,6 +154,10 @@ public class Main {
                                 rentalCompany.getCustomers();
                                 System.out.print("ID: ");
                                 idCustomerToInfo = scanner.next();
+                                if(!idCustomerToInfo.matches("[0-9]+")) {
+                                    System.out.println("Nieprawidłowy ciąg znaków w ID");
+                                    break;
+                                }
                                 customerToInfo = rentalCompany.findCustomerToOperation(idCustomerToInfo);
 
                                 Car rentedCarByCustomer = rentalCompany.getRentedCar(customerToInfo);
@@ -236,6 +234,10 @@ public class Main {
                                 rentalCompany.getCars();
                                 System.out.print("ID: ");
                                 idCarRemove = scanner.next();
+                                if(!idCarRemove.matches("[0-9]+")) {
+                                    System.out.println("Nieprawidłowy ciąg znaków w ID");
+                                    break;
+                                }
 
                                 Car carToRemove = rentalCompany.findCarToOperation(idCarRemove);
                                 if (carToRemove != null)
@@ -307,6 +309,10 @@ public class Main {
                                 rentalCompany.getCustomers();
                                 System.out.print("ID: ");
                                 idCustomerToRemove = scanner.next();
+                                if(!idCustomerToRemove.matches("[0-9]+")) {
+                                    System.out.println("Nieprawidłowy ciąg znaków w ID");
+                                    break;
+                                }
                                 customerToRemove = rentalCompany.findCustomerToOperation(idCustomerToRemove);
                                 if (customerToRemove != null) {
                                     rentalCompany.removeCustomer(customerToRemove);
