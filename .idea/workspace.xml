@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee35de44-7a86-4ccd-a254-a4d7ab8df9fb" name="Changes" comment="Added method availableYN for car.java&#10;nowa metoda która drukuje &quot;tak&quot; i &quot;nie&quot; zamiast true or false na liscie samochodow">
+    <list default="true" id="ee35de44-7a86-4ccd-a254-a4d7ab8df9fb" name="Changes" comment="- dodany else if sprawdzajacy date produkcji samochodu co by nie pochodził z przyszłosci">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -198,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672847826616</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="- dodany else if sprawdzajacy date produkcji samochodu co by nie pochodził z przyszłosci">
+      <created>1673118264888</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1673118264888</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,7 +253,8 @@
     <MESSAGE value="Customer print changes" />
     <MESSAGE value="Overall apperance changes" />
     <MESSAGE value="Added method availableYN for car.java&#10;nowa metoda która drukuje &quot;tak&quot; i &quot;nie&quot; zamiast true or false na liscie samochodow" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added method availableYN for car.java&#10;nowa metoda która drukuje &quot;tak&quot; i &quot;nie&quot; zamiast true or false na liscie samochodow" />
+    <MESSAGE value="- dodany else if sprawdzajacy date produkcji samochodu co by nie pochodził z przyszłosci" />
+    <option name="LAST_COMMIT_MESSAGE" value="- dodany else if sprawdzajacy date produkcji samochodu co by nie pochodził z przyszłosci" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Car_java$Main.ic" NAME="Main Coverage Results" MODIFIED="1672773412798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

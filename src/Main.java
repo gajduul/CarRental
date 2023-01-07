@@ -199,6 +199,7 @@ public class Main {
                         }
                         else if(year > Year.now().getValue()){
                             System.out.println("Samochód nie powinien pochodzić z przyszłości!");
+                            break;
                         }
                         else
                         {
