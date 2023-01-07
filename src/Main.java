@@ -176,39 +176,38 @@ public class Main {
                     rentalCompany.getCars(); //Zwrócenie listy aut
                     break;
                 case 5:
+                    try {
+                        System.out.println("Tutaj dodasz samochód! Najpierw potrzebujemy o nim informacje"); //Metoda zczytuje od użytkownika dane auta
+                        System.out.println("Pamiętaj że w naszej wypożyczalni auto nie może być wyprodukowane przed 2000 rokiem!");
+                        System.out.print("Marka: ");
+                        String mark = info.nextLine();
+                        System.out.print("Model: ");
+                        String model = info.nextLine();
+                        System.out.print("Koszt wypożycznia za dzień: ");
+                        int costPerDay = Integer.parseInt(info.nextLine());
+                        System.out.print("Rok produkcji: ");
+                        int year = Integer.parseInt(info.nextLine());
 
-                    System.out.println("Tutaj dodasz samochód! Najpierw potrzebujemy o nim informacje"); //Metoda zczytuje od użytkownika dane auta
-                    System.out.println("Pamiętaj że w naszej wypożyczalni auto nie może być wyprodukowane przed 2000 rokiem!");
-                    System.out.print("Marka: ");
-                    String mark = info.nextLine();
-                    System.out.print("Model: ");
-                    String model = info.nextLine();
-                    System.out.print("Koszt wypożycznia za dzień: ");
-                    int costPerDay = Integer.parseInt(info.nextLine());
-                    System.out.print("Rok produkcji: ");
-                    int year = Integer.parseInt(info.nextLine());
-
-                    if(costPerDay<0){
-                        System.out.println("Kwota nie może być mniejsza od zera!");
+                        if (costPerDay < 0) {
+                            System.out.println("Kwota nie może być mniejsza od zera!");
+                            break;
+                        } else {
+                            if (year < 2000) {
+                                System.out.println("W wypożyczalni nie może być aut starszych niż z 2000 roku!");
+                                break;
+                            } else if (year > Year.now().getValue()) {
+                                System.out.println("Samochód nie powinien pochodzić z przyszłości!");
+                                break;
+                            } else {
+                                Car car = new Car(mark, model, costPerDay, year); //Utworzenie obiektu na zasadzie danych wpisanych
+                                rentalCompany.addCar(car); //Dodanie auta
+                                break;
+                            }
+                        }
+                    }catch (NumberFormatException nfe){
+                        System.out.println("Podaj liczbę!");
                         break;
                     }
-                    else{
-                        if(year<2000) {
-                            System.out.println("W wypożyczalni nie może być aut starszych niż z 2000 roku!");
-                            break;
-                        }
-                        else if(year > Year.now().getValue()){
-                            System.out.println("Samochód nie powinien pochodzić z przyszłości!");
-                            break;
-                        }
-                        else
-                        {
-                            Car car = new Car(mark,model,costPerDay,year); //Utworzenie obiektu na zasadzie danych wpisanych
-                            rentalCompany.addCar(car); //Dodanie auta
-                            break;
-                        }
-                    }
-
 
                 case 6:
                     String idCarRemove;
