@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee35de44-7a86-4ccd-a254-a4d7ab8df9fb" name="Changes" comment="bug fixes">
+    <list default="true" id="ee35de44-7a86-4ccd-a254-a4d7ab8df9fb" name="Changes" comment="-try catch łapiący numberformatexception w dodawaniu samochodu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -213,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673119204572</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="-try catch łapiący numberformatexception w dodawaniu samochodu">
+      <created>1673121762872</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1673121762872</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +269,8 @@
     <MESSAGE value="Added method availableYN for car.java&#10;nowa metoda która drukuje &quot;tak&quot; i &quot;nie&quot; zamiast true or false na liscie samochodow" />
     <MESSAGE value="- dodany else if sprawdzajacy date produkcji samochodu co by nie pochodził z przyszłosci" />
     <MESSAGE value="bug fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fixes" />
+    <MESSAGE value="-try catch łapiący numberformatexception w dodawaniu samochodu" />
+    <option name="LAST_COMMIT_MESSAGE" value="-try catch łapiący numberformatexception w dodawaniu samochodu" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Car_java$Main.ic" NAME="Main Coverage Results" MODIFIED="1672773412798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

@@ -1,8 +1,9 @@
 import java.time.Year;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
-   public static void main(String[] args) {
+    public static void main(String[] args) {
         int choose = 0;
         Scanner scanner = new Scanner(System.in);
         Scanner info = new Scanner(System.in);
@@ -22,7 +23,7 @@ public class Main {
             System.out.println("10. Wyjście");
             System.out.print("Wybierz opcję: ");
 
-            if(scanner.hasNextInt())
+            if (scanner.hasNextInt())
                 choose = scanner.nextInt();
             else {
                 System.out.println("Wpisano nieprawidłowy ciąg znaków!");
@@ -72,6 +73,8 @@ public class Main {
                     rentalCompany.rentCar(customerToRent, carToRent); //Wywołanie metody rentCar mającej na celu wypożyczenie samochodu
                     break;
                 case 2:
+
+                    Scanner scanner2 = new Scanner(System.in);
                     String idCustomerReturn;
                     Car carToReturn;
                     String idCarRenturn;
@@ -86,7 +89,7 @@ public class Main {
                         System.out.println("Kto zwraca samochód? (wskaż ID klienta)");
                         rentalCompany.getCustomers();// Wyświetlenie użytkowników
                         System.out.print("ID: ");
-                        idCustomerReturn = scanner.next();
+                        idCustomerReturn = scanner2.next();
                         customerToReturn = rentalCompany.findCustomerToOperation(idCustomerReturn); //Wywołanie metody wyszukującej użytkownika o danym ID i przypisanie go do zmiennej customerToReturn
                         if (customerToReturn == null) {
                             System.out.println("Nie ma klienta z takim ID! Spróbuj ponownie wpisując poprawne ID");//Sprawdzenie czy użytkownik o danym ID został znaleziony. Jeśli nie to zwraca true i wywala wyjątek
@@ -101,39 +104,43 @@ public class Main {
                         System.out.println("Jakie auto chcesz zwrócić? (wskaż ID samochodu)");
                         rentalCompany.getCars();
                         System.out.print("ID: ");
-                        idCarRenturn = scanner.next();
+                        idCarRenturn = scanner2.next();
                         carToReturn = rentalCompany.findCarToOperation(idCarRenturn);
                         if (carToReturn == null) {
                             System.out.println("Nie ma auta z takim ID! Spróbuj ponownie wpisując poprawne ID");
                             break;
                         }
                         System.out.print("Ile dni był wypożyczony samochód? (auta wypożyczamy na tylko pełne dni): ");
-                        dayOfRent = scanner.nextInt();
-                        cost = carToReturn.costOfRent(dayOfRent);
-                        if(dayOfRent<0) {
-                            System.out.println("Ilośc dni wypożyczenia nie może być mniejsza od zera!");
+                        try {
+                            dayOfRent = scanner2.nextInt();
+                            cost = carToReturn.costOfRent(dayOfRent);
+                            if (dayOfRent < 0) {
+                                System.out.println("Ilośc dni wypożyczenia nie może być mniejsza od zera!");
+                                break;
+                            }
+                            System.out.println("Do zapłaty: " + cost);
+                        } catch (InputMismatchException ime) {
+                            System.out.println("Podaj poprawną liczbę!");
                             break;
                         }
+
                     } else {
                         System.out.println("Brak samochodów w bazie!");
                         break;
                     }
 
 
-                    System.out.println("Do zapłaty: " + cost);
-
                     System.out.print("Czy kwota została zapłacona?(TAK/NIE): ");
                     Scanner answerOfPayment = new Scanner(System.in);
                     String answer = answerOfPayment.nextLine();
-                    if (answer.equals("TAK") || answer.equals("tak") || answer.equals("Tak") || answer.equals("tAk") || answer.equals("taK")) {
+                    if (answer.equalsIgnoreCase("tak")) {
                         rentalCompany.returnCar(customerToReturn, carToReturn);
                         break;
-                    }
-                    else {
-                        if (answer.equals("NIE") || answer.equals("nie") || answer.equals("Nie") || answer.equals("nIe") || answer.equals("niE")) {
+                    } else {
+                        if (answer.equalsIgnoreCase("nie")) {
                             System.out.println("Klient nie może oddać auta bez zapłaty!");
                             break;
-                        } else{
+                        } else {
                             System.out.println("Wprowadzono niewłaściwy ciąg znaków");
                             break;
                         }
@@ -143,7 +150,7 @@ public class Main {
                     String idCustomerToInfo;
                     Customer customerToInfo;
 
-                    if(rentalCompany.isCustomerExist()) {
+                    if (rentalCompany.isCustomerExist()) {
                         System.out.println("Tutaj możesz zobaczyć jakie wypożyczenia aut ma dany użytkownik!");
                         System.out.println("Którego użytkownika wypożyczenia chcesz zobaczyć? (wskaż ID klienta)");
                         rentalCompany.getCustomers();
@@ -152,21 +159,19 @@ public class Main {
                         customerToInfo = rentalCompany.findCustomerToOperation(idCustomerToInfo);
 
                         Car rentedCarByCustomer = rentalCompany.getRentedCar(customerToInfo);
-                        if(rentedCarByCustomer == null){
-                            if(customerToInfo == null)
+                        if (rentedCarByCustomer == null) {
+                            if (customerToInfo == null)
                                 break;
                             else {
                                 System.out.println("Użytkownik nie ma wypożyczonego żadnego auta");
                                 break;
                             }
-                        }
-                        else{
+                        } else {
                             System.out.println("Auto wypożyczone przez użytkownika to:");
                             System.out.println(rentedCarByCustomer);
                             break;
                         }
-                    }
-                    else{
+                    } else {
                         System.out.println("Brak klientów w bazie!"); //Wyjątek wyrzucany w przypadku kiedy metoda isCustomerExist zwróci false - wyrzucane jest powiadomienie
                         break;
                     }
@@ -204,7 +209,7 @@ public class Main {
                                 break;
                             }
                         }
-                    }catch (NumberFormatException nfe){
+                    } catch (NumberFormatException nfe) {
                         System.out.println("Podaj liczbę!");
                         break;
                     }
@@ -212,7 +217,7 @@ public class Main {
                 case 6:
                     String idCarRemove;
 
-                    if(rentalCompany.isCarExist()) { //To samo co case 1 i case 2
+                    if (rentalCompany.isCarExist()) { //To samo co case 1 i case 2
                         System.out.println("Tutaj usuniesz samochód");
                         System.out.println("Jakie auto chcesz usunąć? (wskaż ID samochodu)");
                         rentalCompany.getCars();
@@ -225,8 +230,7 @@ public class Main {
                         else
                             System.out.println("Nie ma auta z takim ID! Spróbuj ponownie wpisując prawidłowe ID");
                         break;
-                    }
-                    else {
+                    } else {
                         System.out.println("Brak samochodów w bazie!");
                         break;
                     }
@@ -249,7 +253,7 @@ public class Main {
                     System.out.print("Adres zamieszkania: ");
                     String address = info.nextLine();
 
-                    Customer customer = new Customer(name,surname,phone,email,address);
+                    Customer customer = new Customer(name, surname, phone, email, address);
                     rentalCompany.addCustomer(customer);
                     break;
 
@@ -257,7 +261,7 @@ public class Main {
                     String idCustomerToRemove;
                     Customer customerToRemove;
 
-                    if(rentalCompany.isCustomerExist()) {//To samo co case 1 2 i 5
+                    if (rentalCompany.isCustomerExist()) {//To samo co case 1 2 i 5
                         System.out.println("Tutaj usuniesz klienta!");
                         System.out.println("Kogo chcesz usunąć? (wskaż ID klienta)");
                         rentalCompany.getCustomers();
@@ -271,9 +275,7 @@ public class Main {
                             System.out.println("Nie ma klienta z takim ID! Spróbuj ponownie wpisując poprawne ID");
                             break;
                         }
-                    }
-                    else
-                    {
+                    } else {
                         System.out.println("Brak Klientów w bazie! ");
                         break;
                     }
