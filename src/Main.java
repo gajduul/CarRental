@@ -1,3 +1,4 @@
+import java.time.Year;
 import java.util.Scanner;
 
 public class Main {
@@ -195,6 +196,9 @@ public class Main {
                         if(year<2000) {
                             System.out.println("W wypożyczalni nie może być aut starszych niż z 2000 roku!");
                             break;
+                        }
+                        else if(year > Year.now().getValue()){
+                            System.out.println("Samochód nie powinien pochodzić z przyszłości!");
                         }
                         else
                         {
