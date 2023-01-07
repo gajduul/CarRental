@@ -125,7 +125,7 @@ public class Main {
 
                     if(rentalCompany.isCustomerExist()) {
                         System.out.println("Tutaj możesz zobaczyć jakie wypożyczenia aut ma dany użytkownik!");
-                        System.out.println("Które użytkownika wypożyczenia chcesz zobaczyć? (wskaż ID klienta)");
+                        System.out.println("Którego użytkownika wypożyczenia chcesz zobaczyć? (wskaż ID klienta)");
                         rentalCompany.getCustomers();
                         System.out.print("ID: ");
                         idCustomerToInfo = scanner.next();
@@ -214,7 +214,7 @@ public class Main {
                     Customer customerToRemove;
 
                     if(rentalCompany.isCustomerExist()) {//To samo co case 1 2 i 5
-                        System.out.println("Tutaj usuniesz klienta! Najpierw potrzebujemy o nim informacje!");
+                        System.out.println("Tutaj usuniesz klienta!");
                         System.out.println("Kogo chcesz usunąć? (wskaż ID klienta)");
                         rentalCompany.getCustomers();
                         System.out.print("ID: ");

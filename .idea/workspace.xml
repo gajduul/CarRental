@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ee35de44-7a86-4ccd-a254-a4d7ab8df9fb" name="Changes" comment="Added method availableYN for car.java&#10;nowa metoda która drukuje &quot;tak&quot; i &quot;nie&quot; zamiast true or false na liscie samochodow">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RentalCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RentalCompany.java" afterDir="false" />

@@ -8,7 +8,7 @@ public class Car {
 
     public Car(String mark, String model, int year) {//Konstruktor obiektu Car
         id = String.valueOf(count);// Przypisanie użytkownikowi ID do tworzonego samochodu
-        count++;// Dodanie do licznika 1, aby każdy użytkownik miał unikatowe ID
+        count++;// Dodanie do licznika 1, aby każdy samochód miał unikatowe ID
         this.mark = mark;
         this.model = model;
         this.year = year;

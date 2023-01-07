@@ -31,8 +31,10 @@ public class RentalCompany {
             customer.returnCar(car); //Operacja zwrotu auta jeśli warunek jest TRUE
             System.out.println("Auto zostało zwrócone!");
         } else {
-            if (customer.rentedAnyCar()) //Sprawdzenie czy użytkownik posiada jakikolwiek samochód wypożyczone
-                System.out.println("Klient ma wypożyczony inny samochód!"); //Informacja do użytkownika że wypożyczone jest inne auto jeśli warunek jest TRUE
+            if (customer.rentedAnyCar()) { //Sprawdzenie czy użytkownik posiada jakikolwiek samochód wypożyczone
+                System.out.println("Błąd, klient aktualnie ma wypożyczony ten samochód - " + customer.getRentedCar()); //Informacja do użytkownika że wypożyczone jest inne auto jeśli warunek jest TRUE
+                System.out.println("Spróbuj ponownie!");
+            }
             else
                 System.out.println("Klient nie wypożyczył żadnego samochodu!"); //Informacja że użytkownik nie ma żadnego auta wypożyczonego jeśli warunek jest FALSE
         }
