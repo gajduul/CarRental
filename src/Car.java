@@ -3,19 +3,22 @@ public class Car {
     private static int count = 1;
     private String mark;
     private String model;
+    private int costPerDay;
     private int year;
+
     private boolean available;
 
-    public Car(String mark, String model, int year) {//Konstruktor obiektu Car
+    public Car(String mark, String model,int costPerDay, int year) {//Konstruktor obiektu Car
         id = String.valueOf(count);// Przypisanie użytkownikowi ID do tworzonego samochodu
         count++;// Dodanie do licznika 1, aby każdy samochód miał unikatowe ID
         this.mark = mark;
         this.model = model;
         this.year = year;
+        this.costPerDay = costPerDay;
         this.available = true;
     }
     public String toString(){
-        return "ID: "+id+" | Samochód: "+mark+" "+ model +" | Rok Produkcji: "+ year +" | Czy dostępny?: "+ availableYN(available) +" ";//Metoda określająca wyświetlanie obiektu
+        return "ID: "+id+" | Samochód: "+mark+" "+ model +" | Rok Produkcji: " + year + " | Koszt wypożycznia na dzień: "+ costPerDay +"PLN | " +" | Czy dostępny?: "+ availableYN(available) +" ";//Metoda określająca wyświetlanie obiektu
     }
 
 
@@ -54,5 +57,16 @@ public class Car {
 
     public String getId(){//Metoda pomocnicza, która zwraca ID danego auta. Używana w metodzie findCarToOperation w klasie RentalCompany
         return id;
+    }
+
+    public int costOfRent(int days){
+        if(days==0){
+            return 0;
+        }
+        else {
+            int cost = days * costPerDay;
+            return cost;
+        }
+
     }
 }

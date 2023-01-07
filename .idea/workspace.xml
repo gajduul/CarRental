@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ee35de44-7a86-4ccd-a254-a4d7ab8df9fb" name="Changes" comment="Added method availableYN for car.java&#10;nowa metoda która drukuje &quot;tak&quot; i &quot;nie&quot; zamiast true or false na liscie samochodow">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RentalCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RentalCompany.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +99,8 @@
       <workItem from="1672973952866" duration="3125000" />
       <workItem from="1673002821622" duration="1298000" />
       <workItem from="1673027943820" duration="1985000" />
-      <workItem from="1673101568431" duration="1170000" />
+      <workItem from="1673101568431" duration="1352000" />
+      <workItem from="1673103902323" duration="2779000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1670688578863</created>
