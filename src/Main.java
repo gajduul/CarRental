@@ -285,9 +285,14 @@ public class Main {
                             }
                             System.out.print("Adres e-mail: ");
                             String email = info.nextLine();
-                            if (email.matches("[0-9!@#$%^&*()_+-=]+")) {
+                            if (email.matches("[0-9!@#$%^&*()_+-=]+") ) {
                                 System.out.println("Nieprawidłowy ciąg znaków w adresie e-mail");
                                 break;
+                            } else{
+                                if (!email.contains("@")){
+                                    System.out.println("Nieprawidłowy ciąg znaków w adresie e-mail");
+                                    break;
+                                }
                             }
                             System.out.print("Adres zamieszkania: ");
                             String address = info.nextLine();

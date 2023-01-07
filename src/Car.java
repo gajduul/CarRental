@@ -19,7 +19,7 @@ public class Car {
     }
 
     public String toString() {
-        return "ID: " + id + " | Samochód: " + mark + " " + model + " | Rok Produkcji: " + year + " | Koszt wypożycznia na dzień: " + costPerDay + "PLN | " + " | Czy dostępny?: " + availableYN(available) + " ";//Metoda określająca wyświetlanie obiektu
+        return "ID: " + id + " | Samochód: " + mark + " " + model + " | Rok Produkcji: " + year + " | Koszt wypożycznia na dzień: " + costPerDay + " PLN | " + "Czy dostępny?: " + availableYN(available) + " ";//Metoda określająca wyświetlanie obiektu
     }
 
 
