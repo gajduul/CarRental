@@ -297,6 +297,12 @@ public class Main {
                             String address = info.nextLine();
                             if (address.matches("[0-9!@#$%^&*()_+-=]+")) {
                                 System.out.println("Nieprawidłowy ciąg znaków w adresie zamieszkania");
+                                break;
+                            } else{
+                                if (!address.matches(".*\\d.*")){
+                                    System.out.println("Nieprawidłowy ciąg znaków w adresie zamieszkania");
+                                    break;
+                                }
                             }
 
                             Customer customer = new Customer(name, surname, phone, email, address);
