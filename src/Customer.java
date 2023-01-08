@@ -47,10 +47,7 @@ public class Customer {
     } //Metoda pomocnicza zwracająca wartość true/false. Porównuje czy auto wypożyczone przez użytkownika to to samo auto co to do oddania
 
     public boolean rentedAnyCar() { // Metoda pomocnicza - zwraca wartość true/false. Odpowiada na pytanie czy użytkownik ma wypożyczone jakiekolwiek auto
-        if (rentedCar == null)
-            return false;
-        else
-            return true;
+        return rentedCar != null;
     }
 
     public Car getRentedCar() {

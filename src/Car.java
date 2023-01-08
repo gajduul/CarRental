@@ -54,7 +54,7 @@ public class Car {
         return "Nie";
     }
 
-    public String getId() {//Metoda pomocnicza, która zwraca ID danego auta. Używana w metodzie findCarToOperation w klasie RentalCompany
+    public String getId() {
         return id;
     }
 
